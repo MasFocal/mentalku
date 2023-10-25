@@ -23,7 +23,10 @@ body {
 .navbar a {
     font-size: 20px;
     margin-left: 20px;
+    /*
     color: #9D44C0;
+    */
+    color: #531e68;
     text-decoration: none;
 }
 
@@ -105,4 +108,29 @@ body {
     border-radius: 7px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.isi-about {
+    display: flex;
+    margin: 50px 20px;
+}
+
+.about-2 {
+    margin: 5px;
+}
+
+.img-about {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.text-about {
+    padding-top: 20px;
+    font-size: 1.7rem;
+}
+
+.home-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
 }

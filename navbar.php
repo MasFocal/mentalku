@@ -6,7 +6,7 @@
         <a href="index.php">Home</a>
         <a href="diagnosa.php">Diagnosa Gejala</a>
         <a href="404.php">Informasi Diagnosa</a>
-        <a href="404.php">Contact</a>
+        <a href="about.php">About</a>
         <!--
         <a href="404.php">Profile</a>
         -->

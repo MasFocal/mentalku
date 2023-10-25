@@ -11,6 +11,7 @@
 include "navbar.php"
 ?>
     <div class="container">
+        <img class="home-img" src="asset/img/bc.png" alt="">
         <p class="judul-home">SELAMAT DATANG DI MENTALKU</p>
         <p class="isi-home">MENTALKU merupakan website sistem pakar guna mendiagnosa penyakit kesehatan mental</p>
         <a href="diagnosa.php"><button class="button-mulai" id="btn-mulai">MULAI</button></a>
