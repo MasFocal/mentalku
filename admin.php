@@ -7,29 +7,32 @@
     <link rel="stylesheet" href="asset/css/login-admin.css">
 </head>
 <body>
-<?php
-session_start();
-include "koneksi.php";
-    if (isset($_POST['uss']) && isset($_POST['pass'])){
-        $uss =$_POST['uss'];
-        $pass = $_POST['pass'];
-            $sql = "SELECT * FROM admin WHERE username='$uss' AND password='$pass'";
+    <?php
+    session_start();
+    include "koneksi.php";
+        if (isset($_POST['uss']) && isset($_POST['pass'])){
+            $uss =$_POST['uss'];
+            $pass = $_POST['pass'];
+                $sql = "SELECT * FROM admin WHERE username='$uss' AND password='$pass'";
 
-            $result = mysqli_query($konek_db, $sql);
+                $result = mysqli_query($konek_db, $sql);
 
-            $data= mysqli_num_rows($result);
+                $data= mysqli_num_rows($result);
 
-            if($data > 0){
-                $_SESSION['username'] = $uss;
-	            header("location: admin/dashboard-1.php");
-            }else{
-                echo ("<script LANGUAGE='JavaScript'>
-                window.alert('Login Gagal');
-                window.location.href='admin.php';
-                </script>");
+                if($data > 0){
+                    $_SESSION['username'] = $uss;
+                    $_SESSION['password'] = $pass;
+                    header("location: admin/dashboard-1.php");
+                    exit();
+                }else{
+                    echo ("<script LANGUAGE='JavaScript'>
+                    window.alert('Login Gagal');
+                    window.location.href='admin.php';
+                    </script>");
+                    exit();
+                }
             }
-        }
-?>
+    ?>
     <form method="post">
         <img src="asset/img/logo.png">
         <h2>LOGIN ADMIN</h2>

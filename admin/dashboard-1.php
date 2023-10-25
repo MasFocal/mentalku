@@ -13,7 +13,7 @@
 </head>
 <body>
 <?php
-include "sidebar.php"
+    include "sidebar.php"
 ?>
 <div class="container">
     <p class="judul">SISTEM PAKAR KESEHATAN MENTAL</p>
