@@ -10,23 +10,24 @@
 <?php
 session_start();
 include "koneksi.php";
-    if (isset($_POST['uss']) && isset($_POST['pass'])){
+    if (isset($_POST['button'])){
         $uss =$_POST['uss'];
         $pass = $_POST['pass'];
-            $sql = "SELECT * FROM admin WHERE username='$uss' AND password='$pass'";
 
-            $result = mysqli_query($konek_db, $sql);
+        $sql = "SELECT * FROM admin WHERE username='$uss' AND password='$pass'";
 
-            $data= mysqli_num_rows($result);
+        $result = mysqli_query($konek_db, $sql);
 
-            if($data > 0){
+        $data= mysqli_fetch_array($result);
+
+            if($data['username']==$uss && $data['password']==$pass){
                 $_SESSION['username'] = $uss;
 	            header("location: admin/dashboard-1.php");
             }else{
                 echo ("<script LANGUAGE='JavaScript'>
                 window.alert('Login Gagal');
-                window.location.href='admin.php';
-                </script>");
+                window.location.href='admin_copy.php';
+                </script>");;
             }
         }
 ?>
@@ -38,7 +39,7 @@ include "koneksi.php";
         <label>Password</label>
         <input type="password" name="pass" placeholder="Password" required>
 
-        <button type="submit">LOGIN</button>
+        <button name="button">LOGIN</button>
     </form>
 </body>
 </html>

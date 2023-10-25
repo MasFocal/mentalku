@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    if(isset($_SESSION['idadmin']) & isset($_SESSION['username'])){
+    if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ include "sidebar.php"
 <div class="container">
     <p class="judul">SISTEM PAKAR KESEHATAN MENTAL</p>
     <p class="isi-dashboard">
-        Selamat Datang <b><?php echo $_SESSION['nama']; ?></b><br>
+        Selamat Datang <b><?php echo $_SESSION['username']; ?></b><br>
         Silahkan pilih salah satu menu disamping
     </p>
 </div>

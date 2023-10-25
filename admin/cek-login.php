@@ -10,18 +10,6 @@ include "../koneksi.php";
         }
         $uss = validate($_POST['uss']);
         $pass = validate($_POST['pass']);
-
-        if(empty($uss) && empty($pass)){
-            header("Location: ../admin.php?error=Username dan Password harap diisi");
-            exit();
-        }
-        else if(empty($uss)){
-            header("Location: ../admin.php?error=Username harap diisi");
-            exit();
-        }else if(empty($pass)){
-            header("Location: ../admin.php?error=Password harap diisi");
-            exit();
-        }else{
             $sql = "SELECT * FROM admin WHERE username='$uss' AND password='$pass'";
 
             $result = mysqli_query($konek_db, $sql);
@@ -37,12 +25,13 @@ include "../koneksi.php";
                 }else{
                 header("Location: ../admin.php?error=Username atau Password Salah");
                 exit();
-            }
+                }
             }else{
-                header("Location: ../admin.php?error=Username atau Password Salah");
-                exit();
+                echo ("<script LANGUAGE='JavaScript'>
+                window.alert('Gagal');
+                window.location.href='../admin.php';
+                </script>");
             }
-        }
     }else{
         header("Location: ../admin.php");
         exit();

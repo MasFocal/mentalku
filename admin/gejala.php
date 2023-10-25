@@ -10,8 +10,12 @@
     <title>Daftar Gejala</title>
 </head>
 <body>
-<?php
-    include "sidebar.php"
+    <?php
+        include "sidebar.php";
+        if(isset($_POST["hapus"])) {
+            $id = $_POST["id_gejala"];
+            mysqli_query($konek_db, "DELETE FROM `gejala` WHERE `idgejala`='$id'");
+        }
     ?>
     <div class="container">
         <p class="judul">DAFTAR GEJALA</p>
@@ -29,14 +33,25 @@
                     $hasil=mysqli_query ($konek_db,$queri);
                     $id = 0;
                     while ($data = mysqli_fetch_array ($hasil)){
+                ?>
+                    <form action="" method="POST">
+                    <input type="hidden" name="id_gejala" value="<?= $data[0] ?>">
+                    <tr>
+                <?php
                     $id++;
                     echo "
-                        <tr>
-                            <td>".$id."</td>
-                            <td>".$data[0]."</td>
-                            <td>".$data[1]."</td>
-                        </tr>
+                        <td>".$id."</td>
+                        <td>".$data[0]."</td>
+                        <td>".$data[1]."</td>
                     ";
+                ?>
+                    <td>
+                        <input type="submit" name="edit" value="Edit">
+                        <input type="submit" name="hapus" value="Hapus">
+                    </td>
+                    </tr>
+                    </form>
+                <?php
                     }
                 ?>
             </table>

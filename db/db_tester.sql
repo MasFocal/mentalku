@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2023 at 01:06 PM
+-- Generation Time: Oct 23, 2023 at 07:48 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -85,6 +85,7 @@ INSERT INTO `gejala` (`idgejala`, `gejala`) VALUES
 ('G03', 'MiKocok'),
 ('g04', 'SSS'),
 ('g05', 'sss'),
+('g06', 'aaaa'),
 ('SSS', 'SSS');
 
 -- --------------------------------------------------------
@@ -95,6 +96,7 @@ INSERT INTO `gejala` (`idgejala`, `gejala`) VALUES
 
 CREATE TABLE `user` (
   `iduser` int(4) NOT NULL,
+  `nama` varchar(150) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
   `foto` text NOT NULL,
@@ -103,6 +105,13 @@ CREATE TABLE `user` (
   `alamat` text NOT NULL,
   `nohp` int(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`iduser`, `nama`, `email`, `password`, `foto`, `umur`, `jeniskelamin`, `alamat`, `nohp`) VALUES
+(1, '', 'user@user.com', 'user', '', 0, '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -146,7 +155,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
