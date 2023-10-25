@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2023 at 07:48 AM
+-- Generation Time: Oct 25, 2023 at 12:34 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_tester`
+-- Database: `db_tester_2`
 --
 
 -- --------------------------------------------------------
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `idadmin` int(4) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `idadmin` int(2) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `nama` varchar(50) NOT NULL
+  `nama` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -80,13 +80,9 @@ CREATE TABLE `gejala` (
 --
 
 INSERT INTO `gejala` (`idgejala`, `gejala`) VALUES
-('G01', 'Boznet'),
-('G02', 'INFRANET'),
-('G03', 'MiKocok'),
-('g04', 'SSS'),
-('g05', 'sss'),
-('g06', 'aaaa'),
-('SSS', 'SSS');
+('G01', 'EKDJ'),
+('G02', 'CITOR'),
+('G03', 'IDNNSNS');
 
 -- --------------------------------------------------------
 
@@ -96,22 +92,15 @@ INSERT INTO `gejala` (`idgejala`, `gejala`) VALUES
 
 CREATE TABLE `user` (
   `iduser` int(4) NOT NULL,
-  `nama` varchar(150) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL,
   `password` varchar(50) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   `foto` text NOT NULL,
   `umur` int(2) NOT NULL,
   `jeniskelamin` varchar(9) NOT NULL,
   `alamat` text NOT NULL,
   `nohp` int(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`iduser`, `nama`, `email`, `password`, `foto`, `umur`, `jeniskelamin`, `alamat`, `nohp`) VALUES
-(1, '', 'user@user.com', 'user', '', 0, '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -149,13 +138,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `idadmin` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idadmin` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
