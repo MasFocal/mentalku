@@ -35,21 +35,21 @@
                     while ($data = mysqli_fetch_array ($hasil)){
                 ?>
                     <form action="" method="POST">
-                    <input type="hidden" name="id_gejala" value="<?= $data[0] ?>">
-                    <tr>
-                <?php
-                    $id++;
-                    echo "
-                        <td>".$id."</td>
-                        <td>".$data[0]."</td>
-                        <td>".$data[1]."</td>
-                    ";
-                ?>
-                    <td>
-                        <input type="submit" name="edit" value="Edit">
-                        <input type="submit" name="hapus" value="Hapus">
-                    </td>
-                    </tr>
+                        <input type="hidden" name="id_gejala" value="<?= $data[0] ?>">
+                        <tr>
+                            <?php
+                                $id++;
+                                echo "
+                                    <td>".$id."</td>
+                                    <td>".$data[0]."</td>
+                                    <td>".$data[1]."</td>
+                                ";
+                            ?>
+                            <td>
+                                <input type="submit" name="edit" value="Edit">
+                                <input type="submit" name="hapus" value="Hapus">
+                            </td>
+                        </tr>
                     </form>
                 <?php
                     }
