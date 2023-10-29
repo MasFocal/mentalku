@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN PAGE USER</title>
-    <link rel="stylesheet" href="asset/css/login-admin.css">
+    <link rel="stylesheet" href="asset/css/login-user.css">
 </head>
 <body>
     <?php
@@ -40,7 +40,8 @@
         <input type="text" name="email" placeholder="Email" required>
         <label>Password</label>
         <input type="password" name="pass" placeholder="Password" required>
-        <p>Belum Punya Akun ? <a href="#">register</a> </p>
+        <p>Lupa Password ? <a href="#">klik disini</a> </p>
+        <p>Belum Punya Akun ? <a href="#">register</a></p>
         <button type="submit">LOGIN</button>
     </form>
 </body>

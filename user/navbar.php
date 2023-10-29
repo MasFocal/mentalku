@@ -8,7 +8,7 @@
         <a id="menu" href="404.php">Diagnosa Gejala</a>
         <a id="menu" href="404.php">Informasi Diagnosa</a>
         <a id="menu" href="404.php">Profile</a>
-        <a id="menu" href="404.php">About</a>
+        <a id="menu" href="about.php">About</a>
         <a id="menu" href="../index.php"><button class="button-login" id="btn-login">Logout</button></a>
         <!--
         <div class="bars">

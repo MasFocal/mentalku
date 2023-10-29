@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-include "navbar.php"
+    include "navbar.php"
 ?>
     <div class="container">
         <p class="ksg-1">404</p>

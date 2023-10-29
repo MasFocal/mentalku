@@ -20,12 +20,12 @@ img {
 
 .sidebar {
     position: fixed;
-    width: 250px;
+    width: 19%;
     height: 100%;
     /*
     background: #9BABB8;
     */
-    background: #9DB2BF;
+    background: #e3e2f1;
 }
 
 .sidebar ul a {
@@ -53,7 +53,7 @@ a{
 }
 
 .container{
-    margin-left: 250px;
+    margin-left: 20%;
 }
 
 /*
@@ -73,7 +73,6 @@ a{
 .isi-dashboard {
     font-size: 22px;
     padding-top: 50px;
-    padding-left: 30px;
 }
 
 .ksg-1 {
@@ -110,6 +109,7 @@ a{
     font-weight: bold;
     border: 2px solid black;
     border-radius: 7px;
+    margin-bottom: 40px;
 }
 
 #btn-tambah {
@@ -153,4 +153,38 @@ tr {
 
 tr:nth-child(even){
     background-color: #f7f7f7;
+}
+
+button {
+    margin: 4px 6px;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#label-gejala {
+    margin-right: 20px;
+    width: 190px;
+    font-size: 25px;
+}
+
+.cek {
+    margin: 40px 0;
+    display: flex;
+}
+
+input {
+    width: 40%;
+    font-size: 25px;
+}
+
+textarea {
+    width: 40%;
+    font-size: 25px;
+    height: 180px;
+}
+
+#btn-simpan {
+    margin-top: 20px;
+    font-size: 20px;
 }

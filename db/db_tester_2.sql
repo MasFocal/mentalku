@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2023 at 12:34 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Waktu pembuatan: 29 Okt 2023 pada 13.42
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.1.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,7 +35,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`idadmin`, `username`, `password`, `nama`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `admin` (`idadmin`, `username`, `password`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `basispengetahuan`
+-- Struktur dari tabel `basispengetahuan`
 --
 
 CREATE TABLE `basispengetahuan` (
@@ -55,7 +55,7 @@ CREATE TABLE `basispengetahuan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `diagnosa`
+-- Struktur dari tabel `diagnosa`
 --
 
 CREATE TABLE `diagnosa` (
@@ -64,10 +64,18 @@ CREATE TABLE `diagnosa` (
   `solusi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `diagnosa`
+--
+
+INSERT INTO `diagnosa` (`iddiagnosa`, `diagnosa`, `solusi`) VALUES
+('D01', 'CEK CEK', 'aaaaaaa'),
+('D02', 'AAAA', 'DWDWD');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gejala`
+-- Struktur dari tabel `gejala`
 --
 
 CREATE TABLE `gejala` (
@@ -76,18 +84,18 @@ CREATE TABLE `gejala` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `gejala`
+-- Dumping data untuk tabel `gejala`
 --
 
 INSERT INTO `gejala` (`idgejala`, `gejala`) VALUES
 ('G01', 'EKDJ'),
 ('G02', 'CITOR'),
-('G03', 'IDNNSNS');
+('G03', 'AAAA');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -103,48 +111,55 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`iduser`, `email`, `password`, `nama`, `foto`, `umur`, `jeniskelamin`, `alamat`, `nohp`) VALUES
+(1, 'user@user.com', 'user', 'User', '', 21, 'perempuan', 'DxT', 123456789);
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`idadmin`);
 
 --
--- Indexes for table `diagnosa`
+-- Indeks untuk tabel `diagnosa`
 --
 ALTER TABLE `diagnosa`
   ADD PRIMARY KEY (`iddiagnosa`);
 
 --
--- Indexes for table `gejala`
+-- Indeks untuk tabel `gejala`
 --
 ALTER TABLE `gejala`
   ADD PRIMARY KEY (`idgejala`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`iduser`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `idadmin` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

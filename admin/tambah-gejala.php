@@ -16,11 +16,15 @@
     <div class="container">
         <p class="judul">TAMBAH GEJALA</p>
         <form action="" method="POST">
-            <label for="">ID Gejala</label>
-            <input type="text" name="idgejala" id="">
-            <label for="">Gejala</label>
-            <input type="text" name="gejala" id="">
-            <button type="submit" name="simpan">SIMPAN</button>
+            <div class="cek">
+                <label id="label-gejala">ID Gejala :</label>
+                <input type="text" name="idgejala" id="input-gejala" required>
+            </div>
+            <div class="cek">
+                <label id="label-gejala">Gejala :</label>
+                <input type="text" name="gejala" id="input-gejala" required>
+            </div>
+            <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
             <?php
                 if(isset($_POST['simpan'])){
                 $idgejala     = $_POST['idgejala'];
