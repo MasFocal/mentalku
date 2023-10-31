@@ -35,6 +35,7 @@
 
                 if($result) echo "Data Berhasil Disimpan";
                 else echo "Data Gagal Disimpan";
+                header('location:gejala.php');
                 }
             ?>
         </form>
