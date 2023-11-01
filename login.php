@@ -40,8 +40,8 @@
         <input type="text" name="email" placeholder="Email" required>
         <label>Password</label>
         <input type="password" name="pass" placeholder="Password" required>
-        <p>Lupa Password ? <a href="#">klik disini</a> </p>
-        <p>Belum Punya Akun ? <a href="#">register</a></p>
+        <p>Lupa Password ? <a href="lupa-password.php">klik disini</a> </p>
+        <p>Belum Punya Akun ? <a href="register.php">register</a></p>
         <button type="submit">LOGIN</button>
     </form>
 </body>
