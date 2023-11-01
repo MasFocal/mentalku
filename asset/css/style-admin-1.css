@@ -187,6 +187,25 @@ textarea {
     font-size: 20px;
 }
 
-:readonly{
-    background-color: #acacac;
+.readonly{
+    background-color: #f0f0f0;
+}
+
+select {
+    font-size: 15px;
+    width: 30%;
+    text-align: center;
+}
+
+.cx {
+    font-size: 20px;
+}
+
+input[type=checkbox] {
+    transform: scale(1.3);
+}
+
+.cex {
+    margin-top: 15px;
+    margin-right: 5px;
 }

@@ -6,7 +6,7 @@
         <li><a href="dashboard-1.php">BERANDA</a></li>
         <li><a href="gejala.php">GEJALA</a></li>
         <li><a href="diagnosa.php">DIAGNOSA</a></li>
-        <li><a href="404-admin.php">BASIS PENGETAHUAN</a></li>
+        <li><a href="basis-pengetahuan.php">BASIS PENGETAHUAN</a></li>
         <li><a href="404-admin.php">ADMIN</a></li>
         <li><a href="404-admin.php">USER</a></li>
     </ul>

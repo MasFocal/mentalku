@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['email']) && isset($_SESSION['password']) && isset($_SESSION['nama'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +16,15 @@
 include "navbar.php"
 ?>
     <div class="container">
-        <p class="judul-home">SELAMAT DATANG DI MENTALKU</p>
+        <p class="judul-home">Hai, <?php echo $_SESSION['nama']; ?> SELAMAT DATANG DI MENTALKU</p>
         <p class="isi-home">MENTALKU merupakan website sistem pakar guna mendiagnosa penyakit kesehatan mental</p>
         <a href="diagnosa.php"><button class="button-mulai" id="btn-mulai">MULAI</button></a>
     </div>
 </body>
 </html>
+<?php
+    }else{
+        header("Location: ../login.php");
+        exit();
+    }
+?>

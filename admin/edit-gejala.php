@@ -28,7 +28,7 @@
                         $sql = mysqli_query ($konek_db, "SELECT * FROM gejala where idgejala='".$_GET['id']."'");
                         while($data = mysqli_fetch_array ($sql))
                         {
-                            echo "<input type='text' name='idgejala' id='input-gejala' readonly value='".$data['idgejala']."'>";
+                            echo "<input type='text' class='readonly' name='idgejala' id='input-gejala' readonly value='".$data['idgejala']."'>";
                         }
                     ?>
                 </div>

@@ -16,12 +16,12 @@
                 $sql = "SELECT * FROM user WHERE email='$email' AND password='$pass'";
 
                 $result = mysqli_query($konek_db, $sql);
-
-                $data= mysqli_num_rows($result);
+                $data = mysqli_fetch_assoc($result);
 
                 if($data > 0){
                     $_SESSION['email'] = $email;
                     $_SESSION['password'] = $pass;
+                    $_SESSION['nama'] = $data['nama'];
                     header("location: user/index.php");
                     exit();
                 }else{

@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    include "koneksi.php";
+        include "koneksi.php";
     ?>
     <form method="post">
         <img src="asset/img/logo.png">
