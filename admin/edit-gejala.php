@@ -41,7 +41,7 @@
                         $sql = mysqli_query ($konek_db, "SELECT * FROM gejala where idgejala='".$_GET['id']."'");
                         while($data = mysqli_fetch_array ($sql))
                         {
-                            echo "<input type='text' name='gejala' id='input-gejala' value='".$data['gejala']."'>";
+                            echo "<input type='text' name='gejala' id='input-gejala' required value='".$data['gejala']."'>";
                         }
                     ?>
                 </div>
@@ -50,8 +50,8 @@
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
             <?php
                 if(isset($_POST['simpan'])){
-                    $id     = $_POST['idgejala'];
-                    $gejala       = $_POST['gejala'];
+                    $id         = $_POST['idgejala'];
+                    $gejala     = $_POST['gejala'];
 
                     $query="UPDATE `gejala` SET gejala='".$_POST['gejala']."' WHERE idgejala='$id'";
                     $result=mysqli_query($konek_db, $query);

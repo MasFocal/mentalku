@@ -33,9 +33,9 @@
                 $query="INSERT INTO `gejala`(`idgejala`, `gejala`) VALUES ('$idgejala', '$gejala')";
                 $result=mysqli_query($konek_db, $query);
 
-                if($result) echo "Data Berhasil Disimpan";
+                if($result) header('location:gejala.php');
                 else echo "Data Gagal Disimpan";
-                header('location:gejala.php');
+                
                 }
             ?>
         </form>

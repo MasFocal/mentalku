@@ -16,6 +16,14 @@
             $id = $_POST["id_diagnosa"];
             mysqli_query($konek_db, "DELETE FROM `diagnosa` WHERE `iddiagnosa`='$id'");
         }
+        if(isset($_POST['edit'])) {
+            $id = $_POST["id_diagnosa"];
+            header("location: edit-diagnosa.php?id=".$id."");
+        }
+        if(isset($_POST['detail'])) {
+            $id = $_POST["id_diagnosa"];
+            header("location: detail-diagnosa.php?id=".$id."");
+        }
     ?>
     <div class="container">
         <p class="judul">DAFTAR DIAGNOSA</p>
@@ -43,13 +51,20 @@
                                     <td>".$id."</td>
                                     <td>".$data[0]."</td>
                                     <td>".$data[1]."</td>
+                                    <td>
+                                    <a href=\"detail-gejala.php?id=".$data[0]."\"><button name='detail'>Detail</button></a>
+                                    <a href=\"edit-gejala.php?id=".$data[0]."\"><button name='edit'>Edit</button></a>
+                                    <a href=\"?hapus&id_gejala=".$data[0]."\"><button name='hapus'>Hapus</button></a>
+                                </td>
                                 ";
                             ?>
+                            <!--
                             <td>
                                 <button>Lihat<a href="#"></a></button>
                                 <button>Edit<a href="#"></a></button>
                                 <button name="hapus">Hapus</button>
                             </td>
+                    -->
                         </tr>
                     </form>
                 <?php

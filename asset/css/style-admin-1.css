@@ -174,17 +174,19 @@ button {
 }
 
 input {
-    width: 40%;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 textarea {
-    width: 40%;
-    font-size: 25px;
+    font-size: 20px;
     height: 180px;
 }
 
 #btn-simpan {
     margin-top: 20px;
     font-size: 20px;
+}
+
+:readonly{
+    background-color: #acacac;
 }

@@ -53,12 +53,6 @@
                                     </td>
                                 ";
                             ?>
-                            <!--
-                            <td>
-                                <a href=\"editgejala.php?id=".$data[0]."\"><button>Edit</button></a>
-                                <button name="hapus">Hapus</button>
-                            </td>
-                            -->
                         </tr>
                     </form>
                 <?php

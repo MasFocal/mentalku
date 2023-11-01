@@ -38,8 +38,9 @@
                 $query="INSERT INTO `diagnosa`(`iddiagnosa`, `diagnosa`, `solusi`) VALUES ('$iddiagnosa', '$diagnosa', '$solusi')";
                 $result=mysqli_query($konek_db, $query);
 
-                if($result) echo "Data Berhasil Disimpan";
+                if($result) header('location:diagnosa.php');
                 else echo "Data Gagal Disimpan";
+
                 }
             ?>
         </form>
