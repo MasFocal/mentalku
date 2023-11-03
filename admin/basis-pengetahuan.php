@@ -14,11 +14,7 @@
         include "sidebar.php";
         if(isset($_POST['hapus'])) {
             $id = $_POST["id_gejala"];
-            mysqli_query($konek_db, "DELETE FROM `gejala` WHERE `idgejala`='$id'");
-        }
-        if(isset($_POST['edit'])) {
-            $id = $_POST["id_gejala"];
-            header("location: edit-gejala.php?id=".$id."");
+            mysqli_query($konek_db, "DELETE FROM `basispengetahuan` WHERE `diagnosa`='$id'");
         }
     ?>
     <div class="container">
@@ -48,7 +44,7 @@
                                     <td>".$data['0']."</td>
                                     <td>".$data['1']."</td>
                                     <td>
-                                        <a href=\"?hapus&id_gejala=".$data[0]."\"><button name='hapus'>Hapus</button></a>
+                                        <a href=\"?hapus&diagnosa=".$data[0]."\"><button name='hapus'>Hapus</button></a>
                                     </td>
                                 ";
                             ?>

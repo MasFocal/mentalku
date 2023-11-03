@@ -58,13 +58,6 @@
                                     </td>
                                 ";
                             ?>
-                            <!--
-                            <td>
-                                <button>Lihat<a href="#"></a></button>
-                                <button>Edit<a href="#"></a></button>
-                                <button name="hapus">Hapus</button>
-                            </td>
-                    -->
                         </tr>
                     </form>
                 <?php

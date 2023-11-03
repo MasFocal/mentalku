@@ -21,6 +21,9 @@
     </form>
     <?php
         if(isset($_POST['simpan'])){
+            $sql = mysqli_query ($konek_db, "SELECT * FROM user WHERE email='$email' AND password='$pass'");
+            while($data = mysqli_fetch_array ($sql));
+
             $id         = $_POST['iduser'];
             $email      = $_POST['email'];
             $password   = $_POST['pass'];
