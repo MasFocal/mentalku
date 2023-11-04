@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Okt 2023 pada 13.42
+-- Waktu pembuatan: 04 Nov 2023 pada 12.31
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -52,6 +52,16 @@ CREATE TABLE `basispengetahuan` (
   `gejala` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `basispengetahuan`
+--
+
+INSERT INTO `basispengetahuan` (`diagnosa`, `gejala`) VALUES
+('SKWSWSMKW', 'JWSNJWNSJWNSJWNJS'),
+('CEK CEK', 'on'),
+('CEK CEK', 'on'),
+('FRFR', 'on');
+
 -- --------------------------------------------------------
 
 --
@@ -70,7 +80,8 @@ CREATE TABLE `diagnosa` (
 
 INSERT INTO `diagnosa` (`iddiagnosa`, `diagnosa`, `solusi`) VALUES
 ('D01', 'CEK CEK', 'aaaaaaa'),
-('D02', 'AAAA', 'DWDWD');
+('D02', 'AAAA', 'DWDWD\r\ndhbdhebdb'),
+('D05', 'FRFR', 'SWSW\r\nSWSW\r\nSWSWS\r\nSWSWFKRGJRI');
 
 -- --------------------------------------------------------
 
@@ -88,9 +99,12 @@ CREATE TABLE `gejala` (
 --
 
 INSERT INTO `gejala` (`idgejala`, `gejala`) VALUES
-('G01', 'EKDJ'),
-('G02', 'CITOR'),
-('G03', 'AAAA');
+('G03', 'AAaassAA'),
+('G04', 'SSSS'),
+('G06', ''),
+('G07', 'DDD'),
+('G08', 'FEWDsssWDFEF'),
+('G10', ',NVJBJNGJBNJG');
 
 -- --------------------------------------------------------
 
@@ -115,7 +129,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`iduser`, `email`, `password`, `nama`, `foto`, `umur`, `jeniskelamin`, `alamat`, `nohp`) VALUES
-(1, 'user@user.com', 'user', 'User', '', 21, 'perempuan', 'DxT', 123456789);
+(1, 'user@user.com', 'user', 'User', '', 21, 'perempuan', 'DxT', 123456789),
+(2, 'tes@email', '', 'tes', '', 0, '', '', 0),
+(3, 'agus@email', 'agus', 'agus', '', 0, '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -159,7 +175,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
