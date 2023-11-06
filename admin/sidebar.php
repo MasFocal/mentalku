@@ -8,7 +8,7 @@
         <li><a href="diagnosa.php">DIAGNOSA</a></li>
         <li><a href="basis-pengetahuan.php">BASIS PENGETAHUAN</a></li>
         <li><a href="404-admin.php">ADMIN</a></li>
-        <li><a href="404-admin.php">USER</a></li>
+        <li><a href="user.php">USER</a></li>
     </ul>
     <!--
     <div class="logout">
