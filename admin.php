@@ -16,12 +16,12 @@
                 $sql = "SELECT * FROM admin WHERE username='$uss' AND password='$pass'";
 
                 $result = mysqli_query($konek_db, $sql);
-
                 $data= mysqli_num_rows($result);
 
                 if($data > 0){
                     $_SESSION['username'] = $uss;
                     $_SESSION['password'] = $pass;
+                    $_SESSION['nama'] = $data['nama'];
                     header("location: admin/dashboard-1.php");
                     exit();
                 }else{

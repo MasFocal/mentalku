@@ -12,7 +12,7 @@
     ?>
     <form method="post">
         <img src="asset/img/logo.png">
-        <h2>LOGIN USER</h2>
+        <h2>LUPA PASSWORD</h2>
         <label>Email</label>
         <input type="text" name="email" placeholder="Email" required>
         <label>Password Baru</label>
