@@ -24,10 +24,12 @@
                 <label id="label-gejala">Diagnosa :</label>
                 <input type="text" name="diagnosa" id="input-gejala" required>
             </div>
+            <!--
             <div class="cek">
                 <label id="label-gejala">Solusi :</label>
                 <textarea type="text" name="solusi" id="input-gejala" required></textarea>
             </div>
+            -->
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
             <?php
                 if(isset($_POST['simpan'])){

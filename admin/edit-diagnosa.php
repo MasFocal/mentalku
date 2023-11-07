@@ -45,6 +45,7 @@
                     ?>
                 </div>
             </div>
+            <!--
             <div class="cek">
                 <label id="label-gejala">Solusi :</label>
                 <div>
@@ -57,6 +58,7 @@
                     ?>
                 </div>
             </div>
+                    -->
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
             <?php
                 if(isset($_POST['simpan'])){
