@@ -19,6 +19,7 @@ img {
 }
 
 .sidebar {
+    display: block;
     position: fixed;
     width: 19%;
     height: 100%;

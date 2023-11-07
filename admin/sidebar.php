@@ -2,7 +2,7 @@
     <a href="dashboard-1.php">
         <img src="../asset/img/logo.png">
     </a>
-    <ul>
+    <ul class="side">
         <li><a href="dashboard-1.php">BERANDA</a></li>
         <li><a href="gejala.php">GEJALA</a></li>
         <li><a href="diagnosa.php">DIAGNOSA</a></li>
@@ -10,10 +10,5 @@
         <li><a href="404-admin.php">ADMIN</a></li>
         <li><a href="user.php">USER</a></li>
     </ul>
-    <!--
-    <div class="logout">
-        <a href="../admin.php" id="klik">LOG OUT</a>
-    </div>
-    -->
     <a href="../admin.php"><button id="btn-logout">LOGOUT</button></a>
 </div>
