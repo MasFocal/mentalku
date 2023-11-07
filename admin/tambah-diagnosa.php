@@ -10,8 +10,8 @@
     <title>Tambah Diagnosa</title>
 </head>
 <body>
-<?php
-    include "sidebar.php"
+    <?php
+        include "sidebar.php"
     ?>
     <div class="container">
         <p class="judul">TAMBAH DIAGNOSA</p>
@@ -24,23 +24,16 @@
                 <label id="label-gejala">Diagnosa :</label>
                 <input type="text" name="diagnosa" id="input-gejala" required>
             </div>
-            <!--
-            <div class="cek">
-                <label id="label-gejala">Solusi :</label>
-                <textarea type="text" name="solusi" id="input-gejala" required></textarea>
-            </div>
-            -->
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
+
             <?php
                 if(isset($_POST['simpan'])){
-                $iddiagnosa     = $_POST['iddiagnosa'];
-                $diagnosa       = $_POST['diagnosa'];
-                $solusi         = $_POST['solusi'];
+                $iddiagnosa = $_POST['iddiagnosa'];
+                $diagnosa   = $_POST['diagnosa'];
 
-                $query="INSERT INTO `diagnosa`(`iddiagnosa`, `diagnosa`, `solusi`) VALUES ('$iddiagnosa', '$diagnosa', '$solusi')";
-                $result=mysqli_query($konek_db, $query);
+                $query=mysqli_query($konek_db, "INSERT INTO `diagnosa`(`iddiagnosa`, `diagnosa`) VALUES ('$iddiagnosa', '$diagnosa')");
 
-                if($result) header('location:diagnosa.php');
+                if($query) header('location:diagnosa.php');
                 else echo "Data Gagal Disimpan";
 
                 }

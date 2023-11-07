@@ -35,7 +35,7 @@
             </div>
             <div class="cek">
                 <label id="label-gejala">Diagnosa :</label>
-                <div>
+                <div class="text">
                     <?php
                         $sql = mysqli_query ($konek_db, "SELECT * FROM diagnosa where iddiagnosa='".$_GET['id']."'");
                         while($data = mysqli_fetch_array ($sql))
@@ -45,20 +45,6 @@
                     ?>
                 </div>
             </div>
-            <!--
-            <div class="cek">
-                <label id="label-gejala">Solusi :</label>
-                <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM diagnosa where iddiagnosa='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<textarea name='solusi' id='input-gejala' readonly >".$data['solusi']."</textarea>";
-                        }
-                    ?>
-                </div>
-            </div>
-            -->
         </form>
     </div>
 </body>

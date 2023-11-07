@@ -11,17 +11,17 @@
     session_start();
     include "koneksi.php";
         if (isset($_POST['email']) && isset($_POST['pass'])){
-            $email =$_POST['email'];
-            $pass = $_POST['pass'];
-                $sql = "SELECT * FROM user WHERE email='$email' AND password='$pass'";
+                $email  = $_POST['email'];
+                $pass   = $_POST['pass'];
+                $sql    = "SELECT * FROM user WHERE email='$email' AND password='$pass'";
 
                 $result = mysqli_query($konek_db, $sql);
-                $data = mysqli_fetch_assoc($result);
+                $data   = mysqli_fetch_assoc($result);
 
                 if($data > 0){
-                    $_SESSION['email'] = $email;
-                    $_SESSION['password'] = $pass;
-                    $_SESSION['nama'] = $data['nama'];
+                    $_SESSION['email']      = $email;
+                    $_SESSION['password']   = $pass;
+                    $_SESSION['nama']       = $data['nama'];
                     header("location: user/index.php");
                     exit();
                 }else{

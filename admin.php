@@ -11,18 +11,18 @@
     session_start();
     include "koneksi.php";
         if (isset($_POST['uss']) && isset($_POST['pass'])){
-            $uss =$_POST['uss'];
-            $pass = $_POST['pass'];
-                $sql = "SELECT * FROM admin WHERE username='$uss' AND password='$pass'";
+                $uss    = $_POST['uss'];
+                $pass   = $_POST['pass'];
+                $sql    = "SELECT * FROM admin WHERE username='$uss' AND password='$pass'";
 
                 $result = mysqli_query($konek_db, $sql);
-                $data= mysqli_num_rows($result);
+                $data   = mysqli_fetch_assoc($result);
 
                 if($data > 0){
-                    $_SESSION['username'] = $uss;
-                    $_SESSION['password'] = $pass;
-                    $_SESSION['nama'] = $data['nama'];
-                    header("location: admin/dashboard-1.php");
+                    $_SESSION['username']   = $uss;
+                    $_SESSION['password']   = $pass;
+                    $_SESSION['nama']       = $data['nama'];
+                    header("location: admin/dashboard.php");
                     exit();
                 }else{
                     echo ("<script LANGUAGE='JavaScript'>

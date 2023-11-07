@@ -16,7 +16,7 @@
             $id = $_POST["id_user"];
             mysqli_query($konek_db, "DELETE FROM `user` WHERE `iduser`='$id'");
         }
-        if(isset($_POST['detail'])) {
+        if(isset($_POST["detail"])) {
             $id = $_POST["id_user"];
             header("location: detail-user.php?id=".$id."");
         }
@@ -32,28 +32,27 @@
                     <th>Action</th>
                 </tr>
                 <?php
-                    $queri="SELECT * FROM user WHERE 1";
-                    $hasil=mysqli_query ($konek_db,$queri);
+                    $query=mysqli_query ($konek_db, "SELECT * FROM user WHERE 1");
                     $id = 0;
-                    while ($data = mysqli_fetch_array ($hasil)){
+                    while ($data = mysqli_fetch_array($query)){
                 ?>
-                    <form action="" method="POST">
-                        <input type="hidden" name="id_diagnosa" value="<?= $data[0] ?>">
-                        <tr>
-                            <?php
-                                $id++;
-                                echo "
-                                    <td>".$data[0]."</td>
-                                    <td>".$data[1]."</td>
-                                    <td>".$data[2]."</td>
-                                    <td>
-                                        <a href=\"detail-gejala.php?nama=".$data[2]."\"><button name='detail'>Detail</button></a>
-                                        <a href=\"?hapus&nama=".$data[2]."\"><button name='hapus'>Hapus</button></a>
-                                    </td>
-                                ";
-                            ?>
-                        </tr>
-                    </form>
+                <form action="" method="POST">
+                    <input type="hidden" name="id_user" value="<?= $data[0] ?>">
+                    <tr>
+                        <?php
+                            $id++;
+                            echo "
+                                <td>".$data[0]."</td>
+                                <td>".$data[1]."</td>
+                                <td>".$data[2]."</td>
+                                <td>
+                                    <a href=\"detail-gejala.php?nama=".$data[2]."\"><button name='detail'>Detail</button></a>
+                                    <a href=\"?hapus&nama=".$data[2]."\"><button name='hapus'>Hapus</button></a>
+                                </td>
+                            ";
+                        ?>
+                    </tr>
+                </form>
                 <?php
                     }
                 ?>

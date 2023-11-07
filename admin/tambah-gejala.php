@@ -10,8 +10,8 @@
     <title>Tambah Gejala</title>
 </head>
 <body>
-<?php
-    include "sidebar.php"
+    <?php
+        include "sidebar.php"
     ?>
     <div class="container">
         <p class="judul">TAMBAH GEJALA</p>
@@ -25,10 +25,11 @@
                 <input type="text" name="gejala" id="input-gejala" required>
             </div>
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
+
             <?php
                 if(isset($_POST['simpan'])){
-                $idgejala     = $_POST['idgejala'];
-                $gejala       = $_POST['gejala'];
+                $idgejala   = $_POST['idgejala'];
+                $gejala     = $_POST['gejala'];
 
                 $query="INSERT INTO `gejala`(`idgejala`, `gejala`) VALUES ('$idgejala', '$gejala')";
                 $result=mysqli_query($konek_db, $query);

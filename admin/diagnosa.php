@@ -12,17 +12,13 @@
 <body>
     <?php
         include "sidebar.php";
-        if(isset($_POST["hapus"])) {
-            $id = $_POST["id_diagnosa"];
-            mysqli_query($konek_db, "DELETE FROM `diagnosa` WHERE `iddiagnosa`='$id'");
-        }
-        if(isset($_POST['edit'])) {
+        if(isset($_POST["edit"])) {
             $id = $_POST["id_diagnosa"];
             header("location: edit-diagnosa.php?id=".$id."");
         }
-        if(isset($_POST['detail'])) {
+        if(isset($_POST["hapus"])) {
             $id = $_POST["id_diagnosa"];
-            header("location: detail-diagnosa.php?id=".$id."");
+            mysqli_query($konek_db, "DELETE FROM `diagnosa` WHERE `iddiagnosa`='$id'");
         }
     ?>
     <div class="container">
@@ -37,29 +33,27 @@
                     <th>Action</th>
                 </tr>
                 <?php
-                    $queri="SELECT * FROM diagnosa WHERE 1";
-                    $hasil=mysqli_query ($konek_db,$queri);
+                    $query=mysqli_query($konek_db, "SELECT * FROM diagnosa WHERE 1");
                     $id = 0;
-                    while ($data = mysqli_fetch_array ($hasil)){
+                    while ($data = mysqli_fetch_array($query)){
                 ?>
-                    <form action="" method="POST">
-                        <input type="hidden" name="id_diagnosa" value="<?= $data[0] ?>">
-                        <tr>
-                            <?php
-                                $id++;
-                                echo "
-                                    <td>".$id."</td>
-                                    <td>".$data[0]."</td>
-                                    <td>".$data[1]."</td>
-                                    <td>
-                                        <a href=\"detail-gejala.php?id=".$data[0]."\"><button name='detail'>Detail</button></a>
-                                        <a href=\"edit-gejala.php?id=".$data[0]."\"><button name='edit'>Edit</button></a>
-                                        <a href=\"?hapus&id_gejala=".$data[0]."\"><button name='hapus'>Hapus</button></a>
-                                    </td>
-                                ";
-                            ?>
-                        </tr>
-                    </form>
+                <form action="" method="POST">
+                    <input type="hidden" name="id_diagnosa" value="<?= $data[0] ?>">
+                    <tr>
+                        <?php
+                            $id++;
+                            echo "
+                                <td>".$id."</td>
+                                <td>".$data[0]."</td>
+                                <td>".$data[1]."</td>
+                                <td>
+                                    <a href=\"edit-gejala.php?id=".$data[0]."\"><button name='edit'>Edit</button></a>
+                                    <a href=\"?hapus&id_gejala=".$data[0]."\"><button name='hapus'>Hapus</button></a>
+                                </td>
+                            ";
+                        ?>
+                    </tr>
+                </form>
                 <?php
                     }
                 ?>

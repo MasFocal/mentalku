@@ -175,10 +175,6 @@ button {
     display: flex;
 }
 
-input {
-    font-size: 20px;
-}
-
 textarea {
     font-size: 20px;
     height: 180px;
@@ -187,6 +183,7 @@ textarea {
 #btn-simpan {
     margin-top: 20px;
     font-size: 20px;
+    margin-bottom: 50px;
 }
 
 .readonly{
@@ -210,4 +207,12 @@ input[type=checkbox] {
 .cex {
     margin-top: 15px;
     margin-right: 5px;
+}
+
+input {
+    font-size: 20px;
+}
+
+#input-gejala {
+    width: 500px;
 }

@@ -23,7 +23,7 @@
                     <?php
                         $query1= mysqli_query($konek_db, "SELECT * FROM diagnosa WHERE 1");
                         while($hasil=mysqli_fetch_array($query1)){
-                            echo "<option value='".$hasil['diagnosa']."'> ".$hasil['iddiagnosa']." - ".$hasil['diagnosa']."</option>";
+                            echo "<option value='".$hasil['diagnosa']."'>".$hasil['iddiagnosa']." - ".$hasil['diagnosa']."</option>";
                         }
                     ?>
                 </select>
@@ -33,8 +33,9 @@
                 <div class="cx">
                     <?php
                         $query= mysqli_query($konek_db, "SELECT * FROM gejala WHERE 1");
-                        while($hasil=mysqli_fetch_array($query)){
-                            echo "<input type='checkbox' value=".$hasil['gejala']."  name='gejala[]' class='cex' /> ".$hasil['gejala']." <br>";
+                        while($hasil=mysqli_fetch_array($query))
+                        {
+                            echo "<input type='checkbox' value='".$hasil['gejala']."' name='gejala[]' class='cex' /> ".$hasil['gejala']." <br>";
                         }
                     ?>
                 </div>
@@ -50,8 +51,8 @@
                         $query="INSERT INTO `basispengetahuan`(`diagnosa`, `gejala`) VALUES ('$diagnosa','$gejala[$x]')";
                         $result=mysqli_query($konek_db, $query);
         
-                        if($result) header('location:basis-pengetahuan.php');
-                        else echo "Data Gagal Disimpan";
+                        if($result) echo '<META HTTP-EQUIV="Refresh" CONTENT="1; URL=basis-pengetahuan.php">'; 
+                        else echo "Data Gagal Disimpan"; 
                     }
                 }
             ?>

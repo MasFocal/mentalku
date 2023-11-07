@@ -45,28 +45,13 @@
                     ?>
                 </div>
             </div>
-            <!--
-            <div class="cek">
-                <label id="label-gejala">Solusi :</label>
-                <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM diagnosa where iddiagnosa='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<textarea name='solusi' id='input-gejala' required >".$data['solusi']."</textarea>";
-                        }
-                    ?>
-                </div>
-            </div>
-                    -->
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
             <?php
                 if(isset($_POST['simpan'])){
                 $id             = $_POST['iddiagnosa'];
                 $diagnosa       = $_POST['diagnosa'];
-                $solusi         = $_POST['solusi'];
 
-                $query="UPDATE `diagnosa` SET diagnosa='".$_POST['diagnosa']."', solusi='".$_POST['solusi']."' WHERE iddiagnosa='$id'";
+                $query="UPDATE `diagnosa` SET diagnosa='".$_POST['diagnosa']."' WHERE iddiagnosa='$id'";
                 $result=mysqli_query($konek_db, $query);
 
                 if($result) header('location:diagnosa.php');
