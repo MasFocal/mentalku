@@ -43,7 +43,9 @@
                                 <td>".$data['0']."</td>
                                 <td>".$data['1']."</td>
                                 <td>
-                                    <a href=\"?hapus&diagnosa=".$data[0]."\"><button name='hapus'>Hapus</button></a>
+                                    <div class='action'>
+                                        <a href=\"?hapus&diagnosa=".$data[0]."\"><button name='hapus'>Hapus</button></a>
+                                    </div>  
                                 </td>
                             ";
                         ?>

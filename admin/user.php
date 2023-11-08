@@ -46,8 +46,10 @@
                                 <td>".$data[1]."</td>
                                 <td>".$data[2]."</td>
                                 <td>
-                                    <a href=\"detail-gejala.php?nama=".$data[2]."\"><button name='detail'>Detail</button></a>
-                                    <a href=\"?hapus&nama=".$data[2]."\"><button name='hapus'>Hapus</button></a>
+                                    <div class='action'>
+                                        <a href=\"detail-gejala.php?nama=".$data[2]."\"><button name='detail'>Detail</button></a>
+                                        <a href=\"?hapus&nama=".$data[2]."\"><button name='hapus'>Hapus</button></a>
+                                    </div>  
                                 </td>
                             ";
                         ?>

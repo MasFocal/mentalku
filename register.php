@@ -31,7 +31,7 @@
             $query="INSERT INTO `user`(`nama`, `email`, `password`) VALUES ('$nama', '$email', '$password')";
             $result=mysqli_query($konek_db, $query);
 
-            if($result) header('location:user/index.php');
+            if($result) header('location:user/profile.php');
             else echo "Data Gagal Disimpan";
                 
         }

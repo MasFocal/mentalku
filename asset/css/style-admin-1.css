@@ -124,10 +124,7 @@ a{
 }
 
 .daftar {
-    margin-left: 15px;
-    margin-top: 30px;
-    margin-right: 15px;
-    margin-bottom: 30px;
+    margin: 30px 15px;
 }
 
 table {
@@ -215,4 +212,8 @@ input {
 
 #input-gejala {
     width: 500px;
+}
+
+.action {
+    text-align: center;
 }

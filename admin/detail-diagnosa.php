@@ -19,7 +19,7 @@
     }
     ?>
     <div class="container">
-        <p class="judul">TAMBAH DIAGNOSA</p>
+        <p class="judul">DETAIL DIAGNOSA</p>
         <form action="" method="POST">
             <div class="cek">
                 <label id="label-gejala">ID Diagnosa :</label>

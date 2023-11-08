@@ -23,7 +23,7 @@
                     <?php
                         $query1= mysqli_query($konek_db, "SELECT * FROM diagnosa WHERE 1");
                         while($hasil=mysqli_fetch_array($query1)){
-                            echo "<option value='".$hasil['diagnosa']."'>".$hasil['iddiagnosa']." - ".$hasil['diagnosa']."</option>";
+                            echo "<option value='".$hasil['diagnosa']."' required>".$hasil['iddiagnosa']." - ".$hasil['diagnosa']."</option>";
                         }
                     ?>
                 </select>
@@ -51,7 +51,7 @@
                         $query="INSERT INTO `basispengetahuan`(`diagnosa`, `gejala`) VALUES ('$diagnosa','$gejala[$x]')";
                         $result=mysqli_query($konek_db, $query);
         
-                        if($result) echo '<META HTTP-EQUIV="Refresh" CONTENT="1; URL=basis-pengetahuan.php">'; 
+                        if($result) echo '<META HTTP-EQUIV="Refresh" CONTENT="0; URL=basis-pengetahuan.php">'; 
                         else echo "Data Gagal Disimpan"; 
                     }
                 }

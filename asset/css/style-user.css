@@ -72,24 +72,26 @@ body {
     margin-right: 40px;
 }
 
-.container {
-    text-align: center;
-}
-
 .judul-home {
     font-weight: bold;
     font-size: 70px;
     margin-top: 120px;
     margin-left: 10px;
     margin-right: 10px;
+    text-align: center;
 }
 
 .isi-home {
     font-size: 30px;
     margin: 20px 130px;
+    text-align: center;
 }
 
-.button-mulai {
+.btn {
+    text-align: center;
+}
+
+#btn-mulai {
     margin-top: 20px;
     margin-bottom: 40px;
     padding: 15px 40px;
@@ -100,7 +102,7 @@ body {
     border-color: black;
 }
 
-.button-mulai:hover {
+#btn-mulai:hover {
     background-color: rgb(236, 236, 236);
 }
 
@@ -108,6 +110,7 @@ body {
     margin: 40px;
     font-weight: bold;
     font-size: 30px;
+    text-align: center;
 }
 
 .ksg-1 {
@@ -135,6 +138,7 @@ body {
 .isi-about {
     display: flex;
     margin: 50px 20px;
+    text-align: center;
 }
 
 .about-2 {
@@ -199,4 +203,84 @@ li {
     #logo {
         width: 30%;
     }
+}
+
+.sub-judul {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.cx {
+    margin-left:50px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.cex {
+    margin-bottom: 20px;
+    margin-right: 7px;
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+#btn-simpan {
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 50px;
+    margin-left: 25px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-color: black;
+    cursor: pointer;
+}
+
+.not-found {
+    text-align: center;
+}
+
+.daftar {
+    margin: 30px 300px;
+}
+
+table {
+    width: 100%;
+}
+
+table, th{
+    border: 1px solid;
+    border-collapse: collapse;
+    font-size: 16px;
+    padding: 5px 0px;
+}
+
+table, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    font-size: 16px;
+    padding: 5px 0px;
+    padding-left: 5px;
+}
+
+tr {
+    background-color: #e9e9e9;
+}
+
+tr:nth-child(even){
+    background-color: #f7f7f7;
+}
+
+.btn-action {
+    margin: 4px 6px;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.action {
+    text-align: center;
 }
