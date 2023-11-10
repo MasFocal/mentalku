@@ -29,7 +29,7 @@
                     <th>Action</th>
                 </tr>
                 <?php
-                    $query=mysqli_query($konek_db, "SELECT * FROM basispengetahuan WHERE 1");
+                    $query=mysqli_query($konek_db, "Select p.iddiagnosa, b.diagnosa, b.gejala from basispengetahuan b, diagnosa p where p.diagnosa=b.diagnosa");
                     $id = 0;
                     while ($data = mysqli_fetch_array($query)){
                 ?>
@@ -40,8 +40,8 @@
                             $id++;
                             echo "
                                 <td>".$id."</td>
-                                <td>".$data['0']."</td>
                                 <td>".$data['1']."</td>
+                                <td>".$data['2']."</td>
                                 <td>
                                     <div class='action'>
                                         <a href=\"?hapus&diagnosa=".$data[0]."\"><button name='hapus'>Hapus</button></a>
