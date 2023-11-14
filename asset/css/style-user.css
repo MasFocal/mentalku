@@ -217,15 +217,18 @@ li {
     margin-left:50px;
     text-align: left;
     font-size: 20px;
+    align-items: top;
 }
 
 .cex {
-    margin-bottom: 20px;
     margin-right: 7px;
+    vertical-align: middle;
+    margin-top: -6px;
 }
 
 input[type=checkbox] {
     transform: scale(1.5);
+    cursor: pointer;
 }
 
 #btn-simpan {
@@ -283,4 +286,23 @@ tr:nth-child(even){
 
 .action {
     text-align: center;
+}
+
+.cek {
+    margin-top: 20px;
+    display: flex;
+    margin-left: 40px;
+}
+
+#label-gejala {
+    width: 190px;
+    font-size: 25px;
+}
+
+input {
+    font-size: 20px;
+}
+
+#input-gejala {
+    width: 500px;
 }

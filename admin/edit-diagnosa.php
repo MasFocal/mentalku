@@ -40,7 +40,7 @@
                         $sql = mysqli_query ($konek_db, "SELECT * FROM diagnosa where iddiagnosa='".$_GET['id']."'");
                         while($data = mysqli_fetch_array ($sql))
                         {
-                            echo "<input type='text' name='diagnosa' id='input-gejala' required value='".$data['diagnosa']."'>";
+                            echo "<input type='text' name='diagnosa' id='input-gejala' required value='".$data['ndiagnosa']."'>";
                         }
                     ?>
                 </div>

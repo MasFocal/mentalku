@@ -29,7 +29,7 @@
                     <th>Action</th>
                 </tr>
                 <?php
-                    $query=mysqli_query($konek_db, "Select p.iddiagnosa, b.diagnosa, b.gejala from basispengetahuan b, diagnosa p where p.diagnosa=b.diagnosa");
+                    $query=mysqli_query($konek_db, "Select p.iddiagnosa, b.ndiagnosa, b.gejala from basispengetahuan b, diagnosa p where p.ndiagnosa=b.ndiagnosa");
                     $id = 0;
                     while ($data = mysqli_fetch_array($query)){
                 ?>
