@@ -13,8 +13,8 @@
     <?php
         include "sidebar.php";
         if(isset($_POST["hapus"])) {
-            $id = $_POST["id_gejala"];
-            mysqli_query($konek_db, "DELETE FROM `basispengetahuan` WHERE `diagnosa`='$id'");
+            $id = $_POST["id_pd"];
+            mysqli_query($konek_db, "DELETE FROM `basispengetahuan` WHERE `ndiagnosa`='$id'");
         }
     ?>
     <div class="container">
@@ -29,12 +29,13 @@
                     <th>Action</th>
                 </tr>
                 <?php
-                    $query=mysqli_query($konek_db, "Select p.iddiagnosa, b.ndiagnosa, b.gejala from basispengetahuan b, diagnosa p where p.ndiagnosa=b.ndiagnosa");
+                    $query2=mysqli_query($konek_db, "SELECT * FROM `basispengetahuan` WHERE 1");
+                    $query=mysqli_query($konek_db, "SELECT p.iddiagnosa, b.ndiagnosa, b.gejala FROM basispengetahuan b, diagnosa p WHERE p.ndiagnosa=b.ndiagnosa");
                     $id = 0;
                     while ($data = mysqli_fetch_array($query)){
                 ?>
                 <form action="" method="POST">
-                    <input type="hidden" name="id_gejala" value="<?= $data[0] ?>">
+                    <input type="hidden" name="id_pd" value="<?= $data[1] ?>">
                     <tr>
                         <?php
                             $id++;
@@ -44,7 +45,7 @@
                                 <td>".$data['2']."</td>
                                 <td>
                                     <div class='action'>
-                                        <a href=\"?hapus&diagnosa=".$data[0]."\"><button name='hapus'>Hapus</button></a>
+                                        <a href=\"?hapus&diagnosa=".$data[1]."\"><button name='hapus'>Hapus</button></a>
                                     </div>  
                                 </td>
                             ";

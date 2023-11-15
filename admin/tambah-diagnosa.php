@@ -22,16 +22,16 @@
             </div>
             <div class="cek">
                 <label id="label-gejala">Diagnosa :</label>
-                <input type="text" name="diagnosa" id="input-gejala" required>
+                <input type="text" name="ndiagnosa" id="input-gejala" required>
             </div>
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
 
             <?php
                 if(isset($_POST['simpan'])){
                 $iddiagnosa = $_POST['iddiagnosa'];
-                $diagnosa   = $_POST['diagnosa'];
+                $ndiagnosa  = $_POST['ndiagnosa'];
 
-                $query=mysqli_query($konek_db, "INSERT INTO `diagnosa`(`iddiagnosa`, `diagnosa`) VALUES ('$iddiagnosa', '$diagnosa')");
+                $query=mysqli_query($konek_db, "INSERT INTO `diagnosa`(`iddiagnosa`, `ndiagnosa`) VALUES ('$iddiagnosa', '$ndiagnosa')");
 
                 if($query) header('location:diagnosa.php');
                 else echo "Data Gagal Disimpan";

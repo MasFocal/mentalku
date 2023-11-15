@@ -18,12 +18,13 @@
         <form action="" method="POST">
             <div class="cek">
                 <label id="label-gejala">Pilih Diagnosa :</label>
-                <select name="diagnosa" id="">
+                <select name="ndiagnosa" id="">
                     <option value="">---PILIH---</option>
                     <?php
                         $query1= mysqli_query($konek_db, "SELECT * FROM diagnosa WHERE 1");
-                        while($hasil=mysqli_fetch_array($query1)){
-                            echo "<option value='".$hasil['diagnosa']."' required>".$hasil['iddiagnosa']." - ".$hasil['diagnosa']."</option>";
+                        while($hasil=mysqli_fetch_array($query1))
+                        {
+                            echo "<option value='".$hasil['ndiagnosa']."' required> ".$hasil['iddiagnosa']." - ".$hasil['ndiagnosa']." </option>";
                         }
                     ?>
                 </select>
@@ -43,12 +44,12 @@
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
             <?php
                 if(isset($_POST['simpan'])){
-                    $diagnosa       = $_POST['diagnosa'];
-                    $gejala         = $_POST['gejala'];
-                    $jumlah_dipilih = count($gejala);
+                    $ndiagnosa          = $_POST['ndiagnosa'];
+                    $gejala             = $_POST['gejala'];
+                    $jumlah_dipilih     = count($gejala);
 
                     for($x=0;$x<$jumlah_dipilih;$x++){
-                        $query="INSERT INTO `basispengetahuan`(`diagnosa`, `gejala`) VALUES ('$diagnosa','$gejala[$x]')";
+                        $query="INSERT INTO `basispengetahuan`(`ndiagnosa`, `gejala`) VALUES ('$ndiagnosa','$gejala[$x]')";
                         $result=mysqli_query($konek_db, $query);
         
                         if($result) echo '<META HTTP-EQUIV="Refresh" CONTENT="0; URL=basis-pengetahuan.php">'; 

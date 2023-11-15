@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="asset/css/style-user.css">
 </head>
 <body>
-<?php
-include "navbar.php"
-?>
+    <?php
+        include "navbar.php"
+    ?>
     <div class="container">
         <p class="judul-home">UNTUK DAPAT MENGAKSES HALAMAN INI, SILAHKAN LOGIN/REGISTER</p>
     </div>
