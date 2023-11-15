@@ -17,7 +17,7 @@
     <div class="container">
         <p class="judul">DIAGNOSA GEJALA</p>
         <p class="sub-judul">Silahkan Pilih Gejala yang Dirasakan :</p>
-        <form method="POST" action="hasil-diagnosa-1.php">
+        <form method="POST" action="hasil-diagnosa.php">
         <input type="hidden" name="id_diagnosa" value="<?= $data[0] ?>">
             <div class="cx">
                 <?php

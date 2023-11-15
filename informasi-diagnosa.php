@@ -14,7 +14,7 @@
         include "navbar.php";
         if(isset($_POST['detail'])) {
             $id = $_POST["id_diagnosa"];
-            header("location: detail-diagnosa.php?id=".$id."");
+            header("location: akses-ditolak.php");
         }
     ?>
     <div class="container">
@@ -41,12 +41,13 @@
                                 <td>".$data[1]."</td>
                                 <td>
                                     <div class='action'>
-                                        <a href=\"detail-diagnosa.php?id=".$data[0]."\"><button name='detail' class='btn-action'>Detail</button></a>
+                                        <button name='detail' class='btn-action'>Detail</button>
                                     </div>
                                 </td>
                             ";
                         ?>
                     </tr>
+                    <!-- <a href=\"detail-diagnosa.php?id=".$data[0]."\"><button name='detail' class='btn-action'>Detail</button></a> -->
                 </form>
                 <?php
                     }

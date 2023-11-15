@@ -28,7 +28,6 @@
                         $jumlah_dipilih = count($gejala);
                         $id = 0;
                         for($x=0; $x<$jumlah_dipilih; $x++){
-                            $query1 = mysqli_query($konek_db, "SELECT * FROM `basispengetahuan` WHERE gejala='$gejala[$x]'");
                             $query = mysqli_query($konek_db, "SELECT DISTINCT p.iddiagnosa, p.ndiagnosa FROM basispengetahuan b, diagnosa p WHERE b.gejala='$gejala[$x]' AND p.ndiagnosa=b.ndiagnosa GROUP BY ndiagnosa");
                             $result = mysqli_fetch_array($query);
                         }

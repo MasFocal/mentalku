@@ -11,7 +11,7 @@
         include "navbar.php"
     ?>
     <div class="container">
-        <p class="judul-home">UNTUK DAPAT MENGAKSES HALAMAN INI, SILAHKAN LOGIN/REGISTER</p>
+        <p class="isi-home">UNTUK DAPAT MENGAKSES HALAMAN INI, <br> SILAHKAN LOGIN/REGISTER</p>
     </div>
 </body>
 </html>

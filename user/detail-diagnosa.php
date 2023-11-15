@@ -13,6 +13,7 @@
 
     if (isset($_POST['detail'])) {
         $id = $_POST['id_diagnosa'];
+        header("location: hasil-diagnosa.php");
     }
     ?>
     <div class="container">
@@ -54,7 +55,7 @@
                     ?>
                 </div>
             </div>
-            <a href="hasil-diagnosa.php"><button id="btn-home">BACK TO HOME</button></a>
+            <button id="btn-home" name="detail">BACK TO HOME</button>
         </form>
     </div>
 </body>
