@@ -1,6 +1,3 @@
-<?php 
-    include "../koneksi.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +54,7 @@
                     ?>
                 </div>
             </div>
+            <a href="hasil-diagnosa.php"><button id="btn-home">BACK TO HOME</button></a>
         </form>
     </div>
 </body>

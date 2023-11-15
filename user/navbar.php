@@ -1,3 +1,9 @@
+<?php
+    include "../koneksi.php";
+    session_start();
+
+    if(isset($_SESSION['email']) && isset($_SESSION['password']) && isset($_SESSION['nama'])){
+?>
 <div class="header">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <a href="index.php">
@@ -20,3 +26,9 @@
         <li><a id="menu" href="../index.php"><button class="button-login" id="btn-login">Logout</button></a></li>
     </div>
 </div>
+<?php
+    }else{
+        header("Location: ../login.php");
+        exit();
+    }
+?>

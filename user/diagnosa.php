@@ -1,6 +1,3 @@
-<?php 
-    include "../koneksi.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +8,17 @@
 </head>
 <body>
     <?php
-        include "navbar.php"
+        include "navbar.php";
+
+        if(isset($_POST['cek'])) {
+            $id = $_POST["id_diagnosa"];
+        }
     ?>
     <div class="container">
         <p class="judul">DIAGNOSA GEJALA</p>
         <p class="sub-judul">Silahkan Pilih Gejala yang Dirasakan :</p>
-        <form method="POST" action="hasil-diagnosa.php">
+        <form method="POST" action="hasil-diagnosa-1.php">
+        <input type="hidden" name="id_diagnosa" value="<?= $data[0] ?>">
             <div class="cx">
                 <?php
                     $query= mysqli_query($konek_db, "SELECT * FROM gejala WHERE 1");
@@ -26,7 +28,7 @@
                     }
                 ?>
             </div>
-        <button type="submit" name="submit" id="btn-simpan">CEK GEJALA</button>
+        <button type="submit" name="submit" id="btn-simpan" name="cek">CEK GEJALA</button>
         </form>
     </div>
 </body>

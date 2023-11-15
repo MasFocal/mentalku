@@ -1,9 +1,3 @@
-<?php
-    include "../koneksi.php";
-    session_start();
-
-    if(isset($_SESSION['email']) && isset($_SESSION['password']) && isset($_SESSION['nama'])){
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +19,3 @@
     </div>
 </body>
 </html>
-<?php
-    }else{
-        header("Location: ../login.php");
-        exit();
-    }
-?>
