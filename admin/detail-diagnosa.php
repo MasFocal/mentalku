@@ -1,6 +1,3 @@
-<?php 
-    include "../koneksi.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +38,18 @@
                         while($data = mysqli_fetch_array ($sql))
                         {
                             echo "<input type='text' name='diagnosa' id='input-gejala' readonly value='".$data['ndiagnosa']."'>";
+                        }
+                    ?>
+                </div>
+            </div>
+            <div class="cek">
+                <label id="label-gejala">Gejala :</label>
+                <div class="text">
+                    <?php
+                        $sql = mysqli_query ($konek_db, "SELECT * FROM diagnosa p, basispengetahuan b where p.iddiagnosa='".$_GET['id']."' AND p.ndiagnosa=b.ndiagnosa ");
+                        while($data = mysqli_fetch_array ($sql))
+                        {
+                            echo "<input type='text' name='diagnosa' id='input-gejala' readonly value='".$data['gejala']."'> <br><br>";
                         }
                     ?>
                 </div>
