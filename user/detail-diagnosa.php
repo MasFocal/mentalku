@@ -38,7 +38,7 @@
                         $sql = mysqli_query ($konek_db, "SELECT * FROM diagnosa where iddiagnosa='".$_GET['id']."'");
                         while($data = mysqli_fetch_array ($sql))
                         {
-                            echo "<input type='text' name='diagnosa' id='input-gejala' readonly value='".$data['ndiagnosa']."'>";
+                            echo "<input type='text' name='diagnosa' id='input-gejala' readonly value='".$data['diagnosa']."'>";
                         }
                     ?>
                 </div>
@@ -47,7 +47,7 @@
                 <label id="label-gejala">Gejala :</label>
                 <div class="text">
                     <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM diagnosa p, basispengetahuan b where p.iddiagnosa='".$_GET['id']."' AND p.ndiagnosa=b.ndiagnosa ");
+                        $sql = mysqli_query ($konek_db, "SELECT * FROM diagnosa p, basispengetahuan b where p.iddiagnosa='".$_GET['id']."' AND p.diagnosa=b.diagnosa ");
                         while($data = mysqli_fetch_array ($sql))
                         {
                             echo "<input type='text' name='diagnosa' id='input-gejala' readonly value='".$data['gejala']."'> <br><br>";

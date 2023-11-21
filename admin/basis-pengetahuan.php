@@ -11,7 +11,7 @@
         include "sidebar.php";
         if(isset($_POST["hapus"])) {
             $id = $_POST["id_pd"];
-            mysqli_query($konek_db, "DELETE FROM `basispengetahuan` WHERE `ndiagnosa`='$id'");
+            mysqli_query($konek_db, "DELETE FROM `basispengetahuan` WHERE `diagnosa`='$id'");
         }
     ?>
     <div class="container">
@@ -27,9 +27,9 @@
                 </tr>
                 <?php
                     $query2=mysqli_query($konek_db, "SELECT * FROM `basispengetahuan` WHERE 1");
-                    $query=mysqli_query($konek_db, "SELECT p.iddiagnosa, b.ndiagnosa, b.gejala FROM basispengetahuan b, diagnosa p WHERE p.ndiagnosa=b.ndiagnosa");
+                    $query=mysqli_query($konek_db, "SELECT p.iddiagnosa, b.diagnosa, b.gejala FROM basispengetahuan b, diagnosa p WHERE p.diagnosa=b.diagnosa");
                     $id = 0;
-                    while ($data = mysqli_fetch_array($query)){
+                    while ($data = mysqli_fetch_array($query2)){
                 ?>
                 <form action="" method="POST">
                     <input type="hidden" name="id_pd" value="<?= $data[1] ?>">

@@ -28,14 +28,14 @@
                         $jumlah_dipilih = count($gejala);
                         $id = 0;
                         for($x=0; $x<$jumlah_dipilih; $x++){
-                            $query = mysqli_query($konek_db, "SELECT DISTINCT p.iddiagnosa, p.ndiagnosa FROM basispengetahuan b, diagnosa p WHERE b.gejala='$gejala[$x]' AND p.ndiagnosa=b.ndiagnosa GROUP BY ndiagnosa");
+                            $query = mysqli_query($konek_db, "SELECT DISTINCT p.iddiagnosa, p.diagnosa FROM basispengetahuan b, diagnosa p WHERE b.gejala='$gejala[$x]' AND p.diagnosa=b.diagnosa GROUP BY diagnosa");
                             $result = mysqli_fetch_array($query);
                         }
                         echo "
                             <tr>
                                 <td>".$x."</td>
                                 <td>".$result['iddiagnosa']."</td>
-                                <td>".$result['ndiagnosa']."</td>
+                                <td>".$result['diagnosa']."</td>
                                 <td>
                                     <div class='action'>
                                         <a href=\"detail-diagnosa.php?id=".$result['iddiagnosa']."\"><button name='detail' class='btn-action'>Detail</button></a>
