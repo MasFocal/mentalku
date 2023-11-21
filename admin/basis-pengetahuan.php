@@ -32,17 +32,17 @@
                     while ($data = mysqli_fetch_array($query2)){
                 ?>
                 <form action="" method="POST">
-                    <input type="hidden" name="id_pd" value="<?= $data[1] ?>">
+                    <input type="hidden" name="id_pd" value="<?= $data[0] ?>">
                     <tr>
                         <?php
                             $id++;
                             echo "
                                 <td>".$id."</td>
+                                <td>".$data['0']."</td>
                                 <td>".$data['1']."</td>
-                                <td>".$data['2']."</td>
                                 <td>
                                     <div class='action'>
-                                        <a href=\"?hapus&diagnosa=".$data[1]."\"><button name='hapus'>Hapus</button></a>
+                                        <a href=\"?hapus&diagnosa=".$data[0]."\"><button name='hapus'>Hapus</button></a>
                                     </div>  
                                 </td>
                             ";
