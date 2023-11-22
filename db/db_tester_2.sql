@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Nov 2023 pada 14.53
+-- Waktu pembuatan: 22 Nov 2023 pada 14.33
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -58,19 +58,15 @@ CREATE TABLE `basispengetahuan` (
 --
 
 INSERT INTO `basispengetahuan` (`diagnosa`, `gejala`) VALUES
-('SKWSWSMKW', 'JWSNJWNSJWNSJWNJS'),
-('AAAA', 'DDD'),
-('Gangguan Kesehatan Mental Disosiatif', 'Merasa gelisah, susah tidur, pikirannya kacau dan merasa takut'),
-('Gangguan Kesehatan Mental Disosiatif', 'Merasa cepat lelah'),
-('Gangguan Kesehatan Mental Demensia', 'Merasa gelisah, susah tidur, pikirannya kacau dan merasa takut'),
-('Gangguan Kesehatan Mental Demensia', 'Merasa cepat lelah'),
-('Gangguan Kesehatan Mental Skizofrenia', 'Tidak mampu menampakan emosinya'),
-('Gangguan Kesehatan Mental Skizofrenia', 'Tidak dapat menikmati kegiatan yang disenanginya'),
-('Gangguan Kesehatan Mental Neurosis Depresif', 'Selalu merasa salah'),
-('Gangguan Kesehatan Mental Neurosis Depresif', 'Kurang dalam dorongan beraktivitas'),
-('Gangguan Kesehatan Mental Neurosis Depresif', 'Sulit kencing'),
-('Gangguan Kesehatan Mental Afektif', 'Kurang mampu berbicara'),
-('Gangguan Kesehatan Mental Afektif', 'Dibawah kendali kesadarannya');
+('Gangguan Kesehatan Mental Delirium', 'Merasa gelisah'),
+('Gangguan Kesehatan Mental Delirium', 'Susah tidur'),
+('Gangguan Kesehatan Mental Delirium', 'Pikiran kacau'),
+('Gangguan Kesehatan Mental Delirium', 'Merasa takut'),
+('Gangguan Kesehatan Mental Delirium', 'Suka berhalusinasi'),
+('Gangguan Kesehatan Mental Delirium', 'Daya ingat terganggu'),
+('Gangguan Kesehatan Mental Delirium', 'Lupa dengan identitas sendiri'),
+('Gangguan Kesehatan Mental Delirium', 'Susah berkonsentrasi'),
+('Gangguan Kesehatan Mental Delirium', 'Perilaku tidak dibawah kendali kesadaran');
 
 -- --------------------------------------------------------
 
@@ -80,25 +76,24 @@ INSERT INTO `basispengetahuan` (`diagnosa`, `gejala`) VALUES
 
 CREATE TABLE `diagnosa` (
   `iddiagnosa` char(3) NOT NULL,
-  `diagnosa` varchar(100) NOT NULL,
-  `solusi` text NOT NULL
+  `diagnosa` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `diagnosa`
 --
 
-INSERT INTO `diagnosa` (`iddiagnosa`, `diagnosa`, `solusi`) VALUES
-('D01', 'Gangguan Kesehatan Mental Delirium', ''),
-('D02', 'Gangguan Kesehatan Mental Demensia', ''),
-('D03', 'Gangguan Kesehatan Mental Amnestik', ''),
-('D04', 'Gangguan Kesehatan Mental Cemas Menyeluruh', ''),
-('D05', 'Gangguan Kesehatan Mental Somatoform', ''),
-('D06', 'Gangguan Kesehatan Mental Kepribadian', ''),
-('D07', 'Gangguan Kesehatan Mental Neurosis Depresif', ''),
-('D08', 'Gangguan Kesehatan Mental Disosiatif', ''),
-('D09', 'Gangguan Kesehatan Mental Skizofrenia', ''),
-('D10', 'Gangguan Kesehatan Mental Afektif', '');
+INSERT INTO `diagnosa` (`iddiagnosa`, `diagnosa`) VALUES
+('D01', 'Gangguan Kesehatan Mental Delirium'),
+('D02', 'Gangguan Kesehatan Mental Demensia'),
+('D03', 'Gangguan Kesehatan Mental Amnestik'),
+('D04', 'Gangguan Kesehatan Mental Cemas Menyeluruh'),
+('D05', 'Gangguan Kesehatan Mental Somatoform'),
+('D06', 'Gangguan Kesehatan Mental Kepribadian'),
+('D07', 'Gangguan Kesehatan Mental Neurosis Depresif'),
+('D08', 'Gangguan Kesehatan Mental Disosiatif'),
+('D09', 'Gangguan Kesehatan Mental Skizofrenia'),
+('D10', 'Gangguan Kesehatan Mental Afektif');
 
 -- --------------------------------------------------------
 
@@ -116,52 +111,46 @@ CREATE TABLE `gejala` (
 --
 
 INSERT INTO `gejala` (`idgejala`, `gejala`) VALUES
-('G01', 'Merasa gelisah, susah tidur, pikirannya kacau dan merasa takut'),
-('G02', 'Ada perubahan suasana perasaan'),
-('G03', 'Merasa cepat lelah'),
-('G04', 'Suka menyendiri'),
-('G05', 'Berprasangka buruk'),
-('G06', 'Berkeinginan menjauhkan diri dari masyarakat'),
-('G07', 'Selalu merasa salah'),
-('G08', 'Tidak mampu menampakan emosinya'),
-('G09', 'Kurang dalam dorongan beraktivitas'),
-('G10', 'Kurang mampu berbicara'),
-('G11', 'Tidak dapat menikmati kegiatan yang disenanginya'),
-('G12', 'Dibawah kendali kesadarannya'),
-('G13', 'Tidak dibawah kendali kesadarannya'),
-('G14', 'Merasa tidak berguna'),
-('G15', 'Merasa Harga dirinya rendah'),
-('G16', 'Pernah berfikiran untuk mengakhiri hidupnya'),
-('G17', 'Mengalami perasaan tidak nyata'),
-('G18', 'Sering mengalami sakit kepala'),
-('G19', 'Mudah marah'),
-('G20', 'Sulit untuk berteman'),
-('G21', 'Selalu curiga terhadap orang lain'),
-('G22', 'Selalu merasa sedih'),
-('G23', 'Merasa mual'),
-('G24', 'Muntah'),
-('G25', 'Kembung'),
-('G26', 'Merasa pandangannya ganda'),
+('G01', 'Merasa gelisah'),
+('G02', 'Susah tidur'),
+('G03', 'Pikiran kacau'),
+('G04', 'Merasa takut'),
+('G05', 'Ada perubahan suasana perasaan'),
+('G06', 'Merasa cepat lelah'),
+('G07', 'Suka menyendiri'),
+('G08', 'Berprasangka buruk'),
+('G09', 'Berkeinginan menjauhkan diri dari masyarakat'),
+('G10', 'Selalu merasa salah'),
+('G11', 'Tidak mampu menampakan emosinya'),
+('G12', 'Kurang dalam dorongan beraktivitas'),
+('G13', 'Kurang mampu dalam berbicara'),
+('G14', 'Merasa tidak dapat menikmati kegiatan yang disenangi'),
+('G15', 'Perilaku dibawah kendali kesadaran'),
+('G16', 'Merasa tidak berguna'),
+('G17', 'Merasa Harga dirinya rendah'),
+('G18', 'Berfikiran untuk mengakhiri hidupnya'),
+('G19', 'Mengalami perasaan tidak nyata'),
+('G20', 'Sering mengalami sakit kepala'),
+('G21', 'Mudah marah'),
+('G22', 'Sulit untuk berteman'),
+('G23', 'Selalu curiga terhadap orang lain'),
+('G24', 'Selalu merasa sedih'),
+('G25', 'Merasa mual/muntah/kembung'),
+('G26', 'Pandangan seperti kabur'),
 ('G27', 'Merasa cemas'),
 ('G28', 'Mudah tersinggung'),
-('G29', 'Merasa sakit nyeri pada tubuhnya'),
-('G30', 'Persepsinya berlebihan pada suatu bagian tubuhnya'),
-('G31', 'Sering kencing'),
-('G32', 'Sulit kencing'),
-('G33', 'Sesak nafas'),
-('G34', 'Keringat dingin'),
-('G35', 'Sulit untuk berbicara'),
-('G36', 'Mengkonsumsi obat penenang'),
-('G37', 'Tidak mampu membayangkan masa depan'),
-('G38', 'Tidak mampu mengenali hal-hal yang baru'),
-('G39', 'Mengalami hambatan pada pekerjaan'),
-('G40', 'Tidak mengenal dimana ia tinggal sekarang'),
-('G41', 'Percaya terhadap hal-hal yang aneh'),
-('G42', 'Suka berhalusinasi'),
-('G43', 'Terganggu daya ingatnya'),
-('G44', 'Lupa dengan identitasnya'),
-('G45', 'Susah berkonsentrasi'),
-('G46', 'Sering berilusinasi');
+('G29', 'Merasakan sakit nyeri pada bagian tubuh tertentu'),
+('G30', 'Suka berhalusinasi'),
+('G31', 'Daya ingat terganggu'),
+('G32', 'Lupa dengan identitas sendiri'),
+('G33', 'Susah berkonsentrasi'),
+('G34', 'Mengkonsumsi obat penenang'),
+('G35', 'Keringat dingin'),
+('G36', 'Sering kencing'),
+('G37', 'Sesak nafas'),
+('G38', 'Percaya pada hal hal aneh'),
+('G39', 'Mengalami hambatan pada saat bekerja'),
+('G40', 'Perilaku tidak dibawah kendali kesadaran');
 
 -- --------------------------------------------------------
 
@@ -188,8 +177,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`iduser`, `email`, `password`, `nama`, `foto`, `umur`, `jeniskelamin`, `alamat`, `nohp`) VALUES
 (1, 'user@user.com', 'user', 'User', '', 21, 'perempuan', 'DxT', 123456789),
 (2, 'tes@email', '', 'tes', '', 0, '', '', 0),
-(3, 'agus@email', 'agus', 'agus', '', 0, '', '', 0),
-(4, 'dandan@user.com', 'dan', 'dan', '', 0, '', '', 0);
+(3, 'agus@email', 'agus', 'agus', '', 19, 'LakiLaki', 'swswswswsws', 863520462),
+(4, 'dandan@user.com', 'dan', 'dan', '', 0, '', '', 0),
+(5, 'dandan@email', 'dandan', 'Daniel', '', 0, '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -233,7 +223,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
