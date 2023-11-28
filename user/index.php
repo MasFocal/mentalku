@@ -8,10 +8,12 @@
 </head>
 <body>
     <?php
-        include "navbar.php"
+        include "navbar.php";
+        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_SESSION['id']."'");
+        $data = mysqli_fetch_array ($sql);
     ?>
     <div class="container">
-        <p class="judul-home">Hai, <?php echo $_SESSION['nama']; ?> <br> SELAMAT DATANG DI MENTALKU</p>
+        <p class="judul-home">Hai, <?php echo $data['nama'] ?> <br> SELAMAT DATANG DI MENTALKU</p>
         <p class="isi-home">MENTALKU merupakan website sistem pakar guna mendiagnosa penyakit kesehatan mental</p>
         <div class="btn">
             <a href="diagnosa.php"><button id="btn-mulai">MULAI</button></a>

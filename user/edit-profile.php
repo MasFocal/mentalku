@@ -16,7 +16,7 @@
     <div class="container">
         <p class="judul">PROFILE</p>
         <form action="" method="POST">
-            <input type="hidden" name="id" value="<?php echo $data['iduser'] ?>" required>
+            <input type="hidden" name="id" value="<?php echo $data['iduser'] ?>">
             <div class="cek">
                 <label id="label-gejala">Nama :</label>
                 <div class="text">

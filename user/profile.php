@@ -19,37 +19,37 @@
             <div class="cek">
                 <label id="label-gejala">Nama :</label>
                 <div class="text">
-                    <input type='text' name='nama' id='input-gejala' value="<?php echo $data['nama'] ?>">
+                    <input type='text' name='nama' id='input-gejala' readonly value="<?php echo $data['nama'] ?> ">
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Email :</label>
                 <div class="text">
-                    <input type='text' name='email' id='input-gejala' value="<?php echo $data['email'] ?>">
+                    <input type='text' name='email' id='input-gejala' readonly value="<?php echo $data['email'] ?>">
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Usia :</label>
                 <div class="text">
-                    <input type='text' name='umur' id='input-gejala' value="<?php echo $data['umur'] ?>">
+                    <input type='text' name='umur' id='input-gejala' readonly value="<?php echo $data['umur'] ?>">
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Jenis Kelamin :</label>
                 <div class="text">
-                    <input type='text' name='jeniskelamin' id='input-gejala' value="<?php echo $data['jeniskelamin'] ?>">
+                    <input type='text' name='jeniskelamin' id='input-gejala' readonly value="<?php echo $data['jeniskelamin'] ?>">
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">No HP :</label>
                 <div class="text">
-                    <input type='text' name='nohp' id='input-gejala' value="<?php echo $data['nohp'] ?>">
+                    <input type='text' name='nohp' id='input-gejala' readonly value="<?php echo $data['nohp'] ?>">
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Alamat :</label>
                 <div class="text">
-                    <input type='text' name='alamat' id='input-gejala' value="<?php echo $data['alamat'] ?>">
+                    <input type='text' name='alamat' id='input-gejala' readonly value="<?php echo $data['alamat'] ?>">
                 </div>
             </div>
         </form>

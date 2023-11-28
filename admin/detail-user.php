@@ -14,6 +14,10 @@
     if (isset($_POST['detail'])) {
         $id = $_POST['id_diagnosa'];
     }
+
+    $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
+    $data = mysqli_fetch_array ($sql);
+
     ?>
     <div class="container">
         <p class="judul">DETAIL USER</p>
@@ -21,97 +25,49 @@
             <div class="cek">
                 <label id="label-gejala">Foto :</label>
                 <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='foto' id='input-gejala' readonly value='".$data['foto']."'>";
-                        }
-                    ?>
+                    <input type='text' name='foto' id='input-gejala' readonly value='<?php echo $data['foto'] ?>'>
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">ID User :</label>
                 <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='iduser' id='input-gejala' readonly value='".$data['iduser']."'>";
-                        }
-                    ?>
+                    <input type='text' name='iduser' id='input-gejala' readonly value='<?php echo $data['iduser'] ?>'>
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Email :</label>
                 <div class="text">
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='email' id='input-gejala' readonly value='".$data['email']."'>";
-                        }
-                    ?>
+                    <input type='text' name='email' id='input-gejala' readonly value='<?php echo $data['email'] ?>'>
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Nama :</label>
                 <div class="text">
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='nama' id='input-gejala' readonly value='".$data['nama']."'>";
-                        }
-                    ?>
+                    <input type='text' name='nama' id='input-gejala' readonly value='<?php echo $data['nama'] ?>'>
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Usia :</label>
                 <div class="text">
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='umur' id='input-gejala' readonly value='".$data['umur']."'>";
-                        }
-                    ?>
+                    <input type='text' name='umur' id='input-gejala' readonly value='<?php echo $data['umur'] ?>'>
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Jenis Kelamin :</label>
                 <div class="text">
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='jeniskelamin' id='input-gejala' readonly value='".$data['jeniskelamin']."'>";
-                        }
-                    ?>
+                    <input type='text' name='jeniskelamin' id='input-gejala' readonly value='<?php echo $data['jeniskelamin'] ?>'>
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">No HP :</label>
                 <div class="text">
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='nohp' id='input-gejala' readonly value='".$data['nohp']."'>";
-                        }
-                    ?>
+                    <input type='text' name='nohp' id='input-gejala' readonly value='<?php echo $data['nohp'] ?>'>
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Alamat :</label>
                 <div class="text">
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<textarea name='alamat' id='input-gejala' readonly value='".$data['alamat']."'>".$data['alamat']."</textarea>";
-                        }
-                    ?>
+                    <textarea name='alamat' id='input-gejala' readonly value='<?php echo $data['alamat'] ?>'><?php echo $data['alamat'] ?></textarea>";
                 </div>
             </div>
         </form>

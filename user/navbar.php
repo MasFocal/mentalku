@@ -15,7 +15,7 @@
         <a id="menu" href="informasi-diagnosa.php">Informasi Diagnosa</a>
         <a id="menu" href="profile.php">Profile</a>
         <a id="menu" href="about.php">About</a>
-        <a id="menu" href="../index.php"><button class="button-login" id="btn-login">Logout</button></a>
+        <a id="menu" href="logout.php"><button class="button-login" id="btn-login">Logout</button></a>
     </div>
     <div class="dropdown">
         <li><a id="menu" href="index.php">Home</a></li>
@@ -23,7 +23,7 @@
         <li><a id="menu" href="informasi-diagnosa.php">Informasi Diagnosa</a></li>
         <li><a id="menu" href="profile.php">Profile</a></li>
         <li><a id="menu" href="about.php">About</a></li>
-        <li><a id="menu" href="../index.php"><button class="button-login" id="btn-login">Logout</button></a></li>
+        <li><a id="menu" href="logout.php"><button class="button-login" id="btn-login">Logout</button></a></li>
     </div>
 </div>
 <?php
