@@ -13,7 +13,7 @@
 
     if (isset($_POST['detail'])) {
         $id = $_POST['id_diagnosa'];
-        header("location: hasil-diagnosa.php");
+        header("location: informasi-diagnosa.php");
     }
     ?>
     <div class="container">

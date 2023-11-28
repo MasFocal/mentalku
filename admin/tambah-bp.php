@@ -33,7 +33,7 @@
                         $query= mysqli_query($konek_db, "SELECT * FROM gejala WHERE 1");
                         while($hasil=mysqli_fetch_array($query))
                         {
-                            echo "<input type='checkbox' value='".$hasil['gejala']."' name='gejala[]' class='cex' /> ".$hasil['gejala']." <br>";
+                            echo "<input type='checkbox' value='".$hasil['gejala']."' name='gejala[]' class='cex' /> ".$hasil['gejala']." <br><br>";
                         }
                     ?>
                 </div>

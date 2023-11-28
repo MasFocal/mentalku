@@ -178,7 +178,6 @@ textarea {
 }
 
 #btn-simpan {
-    margin-top: 20px;
     font-size: 20px;
     margin-bottom: 50px;
 }
@@ -195,15 +194,20 @@ select {
 
 .cx {
     font-size: 20px;
+    align-items: top;
+    text-align: left;
+    margin-top: 6px
 }
 
 input[type=checkbox] {
-    transform: scale(1.3);
+    transform: scale(1.7);
+    cursor: pointer;
 }
 
 .cex {
-    margin-top: 15px;
-    margin-right: 5px;
+    margin-right: 7px;
+    vertical-align: middle;
+    margin-top: -7px;
 }
 
 input {

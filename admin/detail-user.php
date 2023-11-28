@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="cek">
-                <label id="label-gejala">Nama :</label>
+                <label id="label-gejala">Usia :</label>
                 <div class="text">
                     <?php
                         $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_GET['id']."'");
