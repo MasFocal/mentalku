@@ -9,6 +9,8 @@
 <body>
     <?php
         include "koneksi.php";
+        $sql = mysqli_query ($konek_db, "SELECT `email`, `password` FROM user WHERE 1");
+        $data = mysqli_fetch_array ($sql);
     ?>
     <form method="post">
         <img src="asset/img/logo.png">
@@ -21,14 +23,10 @@
     </form>
     <?php
         if(isset($_POST['simpan'])){
-            $sql = mysqli_query($konek_db, "SELECT * FROM user WHERE email='$email' AND password='$pass'");
-            $data = mysqli_fetch_array($sql);
-
-            $id         = $_POST['iduser'];
             $email      = $_POST['email'];
             $password   = $_POST['pass'];
 
-            $query="UPDATE `user` SET `password`='$password' WHERE iduser='$id'";
+            $query="UPDATE `user` SET `password`='$password' WHERE email='$email'";
             $result=mysqli_query($konek_db, $query);
 
             if($result) header('location:login.php');

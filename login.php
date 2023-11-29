@@ -8,30 +8,8 @@
 </head>
 <body>
     <?php
-    session_start();
-    include "koneksi.php";
-        if (isset($_POST['email']) && isset($_POST['pass'])){
-                $email  = $_POST['email'];
-                $pass   = $_POST['pass'];
-                $sql    = "SELECT * FROM user WHERE email='$email' AND password='$pass'";
-
-                $result = mysqli_query($konek_db, $sql);
-                $data   = mysqli_fetch_assoc($result);
-
-                if($data > 0){
-                    $_SESSION['email']      = $email;
-                    $_SESSION['password']   = $pass;
-                    $_SESSION['id']       = $data['iduser'];
-                    header("location: user/index.php");
-                    exit();
-                }else{
-                    echo ("<script LANGUAGE='JavaScript'>
-                    window.alert('Login Gagal');
-                    window.location.href='login.php';
-                    </script>");
-                    exit();
-                }
-            }
+        session_start();
+        include "koneksi.php";
     ?>
     <form method="post">
         <img src="asset/img/logo.png">
@@ -40,9 +18,35 @@
         <input type="text" name="email" placeholder="Email" required>
         <label>Password</label>
         <input type="password" name="pass" placeholder="Password" required>
-        <p>Lupa Password ? <a href="lupa-password.php">klik disini</a> </p>
-        <p>Belum Punya Akun ? <a href="register.php">register</a></p>
+        <p>Lupa Password ? <a href="lupa-password.php">Klik Disini</a> </p>
+        <p>Belum Punya Akun ? <a href="register.php">Register</a></p>
         <button type="submit">LOGIN</button>
     </form>
+    <?php
+        if (isset($_POST['email']) && isset($_POST['pass'])){
+            $email  = $_POST['email'];
+            $pass   = $_POST['pass'];
+            $sql    = "SELECT * FROM user WHERE email='$email' AND password='$pass'";
+    
+            $result = mysqli_query($konek_db, $sql);
+            $data   = mysqli_fetch_assoc($result);
+    
+            if($data > 0){
+                $_SESSION['email']      = $email;
+                $_SESSION['password']   = $pass;
+                $_SESSION['id']       = $data['iduser'];
+                header("location: user/index.php");
+                exit();
+            }else{
+                echo ("
+                    <script LANGUAGE='JavaScript'>
+                    window.alert('Login Gagal');
+                    window.location.href='login.php';
+                    </script>
+                    ");
+                    exit();
+            }
+        }
+    ?>
 </body>
 </html>

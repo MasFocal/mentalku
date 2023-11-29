@@ -1,6 +1,3 @@
-<?php
-    include "koneksi.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +7,9 @@
     <link rel="stylesheet" href="asset/css/register.css">
 </head>
 <body>
+    <?php
+        include "koneksi.php";
+    ?>
     <form method="post">
         <img src="asset/img/logo.png">
         <h2>REGISTER USER</h2>
@@ -19,7 +19,7 @@
         <input type="text" name="email" placeholder="Email" required>
         <label>Password</label>
         <input type="password" name="pass" placeholder="Password" required>
-        <p>Sudah Punya Akun ? <a href="login.php">login</a></p>
+        <p>Sudah Punya Akun ? <a href="login.php">Login</a></p>
         <button type="submit" name="register">REGISTER</button>
     </form>
     <?php

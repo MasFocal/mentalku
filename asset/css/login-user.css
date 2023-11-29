@@ -82,3 +82,8 @@ button:hover {
 p {
     margin-top: 30px;
 }
+
+a {
+    text-decoration: none;
+    color: blue;
+}
