@@ -9,6 +9,28 @@
 <body>
     <?php
         include "koneksi.php";
+
+        if (isset($_POST['register'])) {
+            $nama       = $_POST['nama'];
+            $email      = $_POST['email'];
+            $password   = $_POST['pass'];
+                
+            $cekEmail = mysqli_query($konek_db, "SELECT * FROM `user` WHERE `email` = '$email'");
+                
+            if (mysqli_num_rows($cekEmail) > 0) {
+                $notif = "Email sudah terdaftar. <br> Silakan gunakan email lain.";
+            } else {
+                $query = "INSERT INTO `user`(`nama`, `email`, `password`) VALUES ('$nama', '$email', '$password')";
+                $result = mysqli_query($konek_db, $query);
+                
+                if ($result) {
+                    header('location:login.php');
+                    exit();
+                } else {
+                    $notif = "Data Gagal Disimpan";
+                }
+            }
+        }
     ?>
     <form method="post">
         <img src="asset/img/logo.png">
@@ -21,20 +43,10 @@
         <input type="password" name="pass" placeholder="Password" required>
         <p>Sudah Punya Akun ? <a href="login.php">Login</a></p>
         <button type="submit" name="register">REGISTER</button>
+        <p class="notif"><?php echo isset($notif) ? $notif : ''; ?></p>
     </form>
     <?php
-        if(isset($_POST['register'])){
-            $nama       = $_POST['nama'];
-            $email      = $_POST['email'];
-            $password   = $_POST['pass'];
 
-            $query="INSERT INTO `user`(`nama`, `email`, `password`) VALUES ('$nama', '$email', '$password')";
-            $result=mysqli_query($konek_db, $query);
-
-            if($result) header('location:user/profile.php');
-            else echo "Data Gagal Disimpan";
-                
-        }
     ?>
 </body>
 </html>

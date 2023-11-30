@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Nov 2023 pada 05.55
+-- Waktu pembuatan: 30 Nov 2023 pada 01.15
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -257,7 +257,7 @@ INSERT INTO `user` (`iduser`, `email`, `password`, `nama`, `foto`, `umur`, `jeni
 (1, 'user@user.com', 'user', 'User', '', 21, 'perempuan', 'DxT', 123456789),
 (2, 'tes@email', '', 'tes', '', 0, '', '', 0),
 (3, 'agus@email', 'agus', 'agus ccc', '', 19, 'Laki Laki', 'swswswswsws', 863520462),
-(4, 'dandan@user.com', 'dan', 'dan', '', 0, '', '', 0),
+(4, 'dandan@user.com', 'dan12', 'dan', '', 0, '', '', 0),
 (5, 'dandan@email', 'dandan', 'Daniel', '', 0, '', '', 0);
 
 --

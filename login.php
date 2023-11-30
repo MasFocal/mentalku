@@ -34,7 +34,7 @@
             if($data > 0){
                 $_SESSION['email']      = $email;
                 $_SESSION['password']   = $pass;
-                $_SESSION['id']       = $data['iduser'];
+                $_SESSION['id']         = $data['iduser'];
                 header("location: user/index.php");
                 exit();
             }else{
