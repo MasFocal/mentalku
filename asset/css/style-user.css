@@ -231,6 +231,11 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
+input[type=radio] {
+    transform: scale(1.6);
+    cursor: pointer;
+}
+
 #btn-simpan {
     margin-top: 20px;
     font-size: 20px;
@@ -295,7 +300,7 @@ tr:nth-child(even){
 }
 
 #label-gejala {
-    width: 200px;
+    width: 250px;
     font-size: 25px;
     font-weight: bold;
 }
@@ -312,4 +317,23 @@ input {
 #input-gejala-1 {
     width: 700px;
     font-size: 25px;
+}
+
+.uphoto{
+    text-align: center;
+}
+
+#input-gejala-2 {
+    margin-right: 12px;
+    vertical-align: middle;
+    margin-top: -4px;
+    font-size: 25px;
+}
+
+.radio-input {
+    margin-top: 5px;
+    margin-right: 20px;
+    text-align: left;
+    font-size: 20px;
+    align-items: top;
 }

@@ -22,7 +22,7 @@
                     $_SESSION['username']   = $uss;
                     $_SESSION['password']   = $pass;
                     $_SESSION['nama']       = $data['nama'];
-                    header("location: admin/dashboard.php");
+                    header("location: admin/index.php");
                     exit();
                 }else{
                     echo ("<script LANGUAGE='JavaScript'>

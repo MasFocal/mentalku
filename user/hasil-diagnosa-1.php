@@ -18,42 +18,35 @@
         <form method="post">
             <div class="cek">
                 <label id="label-gejala">Nama :</label>
-                <div>
-                    <input type='text' name='nama' id='input-gejala' readonly value="<?php echo $data['nama'] ?> ">
-                </div>
+                <input type='text' name='nama' id='input-gejala' readonly value="<?php echo $data['nama'] ?> ">
             </div>
             <div class="cek">
                 <label id="label-gejala">Usia :</label>
-                <div>
-                    <input type='text' name='umur' id='input-gejala' readonly value="<?php echo $data['umur'] ?> ">
-                </div>
+                <input type='text' name='umur' id='input-gejala' readonly value="<?php echo $data['umur'] ?> ">
             </div>
             <div class="cek">
                 <label id="label-gejala">Jenis Kelamin :</label>
-                <div>
-                    <input type='text' name='jeniskelamin' id='input-gejala' readonly value="<?php echo $data['jeniskelamin'] ?> ">
-                </div>
+                <input type='text' name='jeniskelamin' id='input-gejala' readonly value="<?php echo $data['jeniskelamin'] ?> ">
             </div>
             <div class="cek">
                 <label id="label-gejala">Diagnosa :</label>
-                <div>
-                    <?php
+                <?php
                     if(isset($_POST['submit'])){ 
                         $gejala         = $_POST['gejala'];
                         $jumlah_dipilih = count($gejala);
                         $id = 0;
                         for($x=0; $x<$jumlah_dipilih; $x++){
-                            $query = mysqli_query($konek_db, "SELECT DISTINCT p.iddiagnosa, p.diagnosa FROM basispengetahuan b, diagnosa p WHERE b.gejala='$gejala[$x]' AND p.diagnosa=b.diagnosa GROUP BY diagnosa");
+                            $query  = mysqli_query($konek_db, "SELECT DISTINCT p.iddiagnosa, p.diagnosa FROM basispengetahuan b, diagnosa p WHERE b.gejala='$gejala[$x]' AND p.diagnosa=b.diagnosa GROUP BY diagnosa");
                             $result = mysqli_fetch_array($query);
                         }
                         if($result){
                             echo "<input type='text' name='diagnosa' id='input-gejala' readonly value='".$result['diagnosa']."'>";
                         }
                     }
-                    ?>
-                </div>
+                ?>
             </div>
         </form>
+        <p class="judul">INFORMASI PSIKOLOG</p>
     </div>
 </body>
 </html>

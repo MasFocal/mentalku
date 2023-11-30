@@ -16,50 +16,42 @@
     <div class="container">
         <p class="judul">PROFILE</p>
         <form action="" method="POST">
-            <input type="hidden" name="id" value="<?php echo $data['iduser'] ?>">
+            <input type="hidden" name="iduser" value="<?php echo $data['iduser'] ?>">
             <div class="cek">
                 <label id="label-gejala">Nama :</label>
-                <div class="text">
-                    <input type="text" name="nama" id="input-gejala" value="<?php echo $data['nama'] ?>" required>
-                </div>
+                <input type="text" name="nama" id="input-gejala" value="<?php echo $data['nama'] ?>" required>
             </div>
             <div class="cek">
                 <label id="label-gejala">Email :</label>
-                <div class="text">
-                    <input type="text" name="email" id="input-gejala" value="<?php echo $data['email'] ?>" required>
-                </div>
+                <input type="text" name="email" id="input-gejala" value="<?php echo $data['email'] ?>" required>
             </div>
             <div class="cek">
                 <label id="label-gejala">Usia :</label>
-                <div class="text">
-                    <input type='text' name='umur' id='input-gejala' value="<?php echo $data['umur'] ?>" required>
-                </div>
+                <input type='text' name='umur' id='input-gejala' value="<?php echo $data['umur'] ?>" required>
             </div>
             <div class="cek">
                 <label id="label-gejala">Jenis Kelamin :</label>
-                <div class="text">
-                    <input type='radio' name='jeniskelamin' id='input-gejala-1' value='Laki Laki' required>Laki Laki
-                    <input type='radio' name='jeniskelamin' id='input-gejala-1' value='Perempuan' required>Perempuan
+                <div class="radio-input">
+                    <input type='radio' name='jeniskelamin' id='input-gejala-2' value='Laki Laki' required>Laki Laki
+                </div>
+                <div class="radio-input">
+                    <input type='radio' name='jeniskelamin' id='input-gejala-2' value='Perempuan' required>Perempuan
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">No HP :</label>
-                <div class="text">
-                    <input type='text' name='nohp' id='input-gejala' value="<?php echo $data['nohp'] ?>" required>
-                </div>
+                <input type='text' name='nohp' id='input-gejala' value="<?php echo $data['nohp'] ?>" required>
             </div>
             <div class="cek">
                 <label id="label-gejala">Alamat :</label>
-                <div class="text">
-                    <textarea type='text' name='alamat' id='input-gejala' value="<?php echo $data['alamat'] ?>"required><?php echo $data['alamat'] ?></textarea>
-                </div>
+                <textarea type='text' name='alamat' id='input-gejala' value="<?php echo $data['alamat'] ?>"required><?php echo $data['alamat'] ?></textarea>
             </div>
             <div class="btn">
                 <a href="profile.php"><button type="submit" name="simpan" id="btn-mulai">SIMPAN</button></a>
             </div>
             <?php
                 if(isset($_POST['simpan'])){
-                $iduser         = $_POST['id'];
+                $iduser         = $_POST['iduser'];
                 $nama           = $_POST['nama'];
                 $email          = $_POST['email'];
                 $umur           = $_POST['umur'];
