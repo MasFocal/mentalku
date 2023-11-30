@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN PAGE USER</title>
-    <link rel="stylesheet" href="asset/css/login-user.css">
+    <link rel="stylesheet" href="asset/css/register.css">
 </head>
 <body>
     <?php
@@ -26,15 +26,14 @@
         if (isset($_POST['email']) && isset($_POST['pass'])){
             $email  = $_POST['email'];
             $pass   = $_POST['pass'];
-            $sql    = "SELECT * FROM user WHERE email='$email' AND password='$pass'";
     
-            $result = mysqli_query($konek_db, $sql);
-            $data   = mysqli_fetch_assoc($result);
+            $query  = mysqli_query($konek_db, "SELECT * FROM user WHERE email='$email' AND password='$pass'");
+            $result = mysqli_fetch_assoc($query);
     
-            if($data > 0){
+            if($result > 0){
                 $_SESSION['email']      = $email;
                 $_SESSION['password']   = $pass;
-                $_SESSION['id']         = $data['iduser'];
+                $_SESSION['id']         = $result['iduser'];
                 header("location: user/index.php");
                 exit();
             }else{

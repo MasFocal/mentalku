@@ -5,7 +5,7 @@
     if(isset($_SESSION['username']) && isset($_SESSION['password']) && isset($_SESSION['nama'])){
 ?>
 <div class="sidebar">
-    <a href="dashboard-1.php">
+    <a href="dashboard.php">
         <img src="../asset/img/logo.png">
     </a>
     <ul class="side">

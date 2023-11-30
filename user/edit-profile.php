@@ -51,7 +51,7 @@
             <div class="cek">
                 <label id="label-gejala">Alamat :</label>
                 <div class="text">
-                    <input type='text' name='alamat' id='input-gejala' value="<?php echo $data['alamat'] ?>" required>
+                    <textarea type='text' name='alamat' id='input-gejala' value="<?php echo $data['alamat'] ?>"required><?php echo $data['alamat'] ?></textarea>
                 </div>
             </div>
             <div class="btn">

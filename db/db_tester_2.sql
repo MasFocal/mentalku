@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Nov 2023 pada 01.15
+-- Waktu pembuatan: 30 Nov 2023 pada 03.25
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -256,9 +256,11 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`iduser`, `email`, `password`, `nama`, `foto`, `umur`, `jeniskelamin`, `alamat`, `nohp`) VALUES
 (1, 'user@user.com', 'user', 'User', '', 21, 'perempuan', 'DxT', 123456789),
 (2, 'tes@email', '', 'tes', '', 0, '', '', 0),
-(3, 'agus@email', 'agus', 'agus ccc', '', 19, 'Laki Laki', 'swswswswsws', 863520462),
+(3, 'agus@email', 'agus', 'agus ccc', '', 19, 'Laki Laki', 'Jalan Belimbing No 12, Gilingan, Banjarsari, Surakarta', 863520462),
 (4, 'dandan@user.com', 'dan12', 'dan', '', 0, '', '', 0),
-(5, 'dandan@email', 'dandan', 'Daniel', '', 0, '', '', 0);
+(5, 'dandan@email', 'dandan', 'Daniel', '', 0, '', '', 0),
+(6, 'danieldaniel@email', '12121212', 'daniel12', '', 0, '', '', 0),
+(9, 'daniel12@email', '12121212', 'Daniel Putra', '', 0, '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -302,7 +304,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `iduser` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

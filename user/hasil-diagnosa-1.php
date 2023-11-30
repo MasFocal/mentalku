@@ -10,6 +10,8 @@
     <?php
         include "navbar.php";
         $id = null;
+        $sql = mysqli_query ($konek_db, "SELECT * FROM user where iduser='".$_SESSION['id']."'");
+        $data = mysqli_fetch_array ($sql);
     ?>
     <div class="container">
         <p class="judul">HASIL DIAGNOSA</p>
@@ -17,37 +19,19 @@
             <div class="cek">
                 <label id="label-gejala">Nama :</label>
                 <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where nama='".$_SESSION['nama']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='nama' id='input-gejala' readonly value='".$data['nama']."'>";
-                        }
-                    ?>
+                    <input type='text' name='nama' id='input-gejala' readonly value="<?php echo $data['nama'] ?> ">
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Usia :</label>
                 <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where nama='".$_SESSION['nama']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='umur' id='input-gejala' readonly value='".$data['umur']."'>";
-                        }
-                    ?>
+                    <input type='text' name='umur' id='input-gejala' readonly value="<?php echo $data['umur'] ?> ">
                 </div>
             </div>
             <div class="cek">
                 <label id="label-gejala">Jenis Kelamin :</label>
                 <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM user where nama='".$_SESSION['nama']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='jeniskelamin' id='input-gejala' readonly value='".$data['jeniskelamin']."'>";
-                        }
-                    ?>
+                    <input type='text' name='jeniskelamin' id='input-gejala' readonly value="<?php echo $data['jeniskelamin'] ?> ">
                 </div>
             </div>
             <div class="cek">

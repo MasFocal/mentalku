@@ -295,8 +295,9 @@ tr:nth-child(even){
 }
 
 #label-gejala {
-    width: 190px;
+    width: 200px;
     font-size: 25px;
+    font-weight: bold;
 }
 
 input {
@@ -305,4 +306,10 @@ input {
 
 #input-gejala {
     width: 500px;
+    font-size: 20px;
+}
+
+#input-gejala-1 {
+    width: 700px;
+    font-size: 25px;
 }
