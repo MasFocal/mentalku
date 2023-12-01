@@ -3,48 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/style-admin-1.css">
     <title>Edit Gejala</title>
 </head>
 <body>
     <?php
-        include "sidebar.php";
+        include "navbar.php";
         $id = null;    
 
         if (isset($_POST['edit'])) {
             $id = $_POST['id_gejala'];
         }
+
+        $sql    = mysqli_query ($konek_db, "SELECT * FROM gejala where idgejala='".$_GET['id']."'");
+        $data   = mysqli_fetch_array ($sql);
     ?>
     <div class="container">
         <p class="judul">EDIT GEJALA</p>
         <form action="" method="POST">
-            <div class="cek">
+            <li class="list-form">
                 <label id="label-gejala">ID Gejala :</label>
-                <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM gejala where idgejala='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' class='readonly' name='idgejala' id='input-gejala' readonly value='".$data['idgejala']."'>";
-                        }
-                    ?>
-                </div>
-            </div>
-
-            <div class="cek">
+                <input type='text' class='readonly' name='idgejala' id='input-gejala' readonly value="<?php echo $data['idgejala'] ?>">
+            </li>
+            <li class="list-form">
                 <label id="label-gejala">Gejala :</label>
-                <div>
-                    <?php
-                        $sql = mysqli_query ($konek_db, "SELECT * FROM gejala where idgejala='".$_GET['id']."'");
-                        while($data = mysqli_fetch_array ($sql))
-                        {
-                            echo "<input type='text' name='gejala' id='input-gejala' required value='".$data['gejala']."'>";
-                        }
-                    ?>
-                </div>
+                <input type='text' name='gejala' id='input-gejala' value="<?php echo $data['gejala'] ?>" required>
             </div>
-
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
+            
             <?php
                 if(isset($_POST['simpan'])){
                     $id         = $_POST['idgejala'];

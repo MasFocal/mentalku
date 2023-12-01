@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/style-admin-1.css">
     <title>Daftar Basis Pengetahuan</title>
 </head>
 <body>
     <?php
-        include "sidebar.php";
+        include "navbar.php";
         if(isset($_POST["hapus"])) {
             $id = $_POST["id_pd"];
             mysqli_query($konek_db, "DELETE FROM `basispengetahuan` WHERE `diagnosa`='$id'");
@@ -26,10 +25,19 @@
                     <th>Action</th>
                 </tr>
                 <?php
-                    $query2=mysqli_query($konek_db, "SELECT * FROM `basispengetahuan` WHERE 1");
-                    $query=mysqli_query($konek_db, "SELECT p.iddiagnosa, b.diagnosa, b.gejala FROM basispengetahuan b, diagnosa p WHERE p.diagnosa=b.diagnosa");
-                    $id = 0;
-                    while ($data = mysqli_fetch_array($query2)){
+                    $limit = 15;
+
+                    if (isset($_GET["page"])) {    
+                        $page_number  = $_GET["page"];    
+                    }else{
+                        $page_number=1;
+                    }
+
+                    $initial_page = ($page_number-1) * $limit; 
+
+                    $query = mysqli_query($konek_db, "SELECT * FROM `basispengetahuan` WHERE 1 LIMIT $initial_page, $limit");
+                    $id = $initial_page+0;
+                    while ($data = mysqli_fetch_array($query)){
                 ?>
                 <form action="" method="POST">
                     <input type="hidden" name="id_pd" value="<?= $data[0] ?>">
@@ -53,6 +61,35 @@
                     }
                 ?>
             </table>
+            <div class="pagination">
+                <?php 
+                    $query2 = mysqli_query($konek_db, "SELECT COUNT(*) FROM basispengetahuan");
+                    $data2  = mysqli_fetch_row($query2);
+                    
+                    $total_rows = $data2[0];              
+                    echo "</br>";            
+                    // get the required number of pages
+                    $total_pages = ceil($total_rows / $limit);     
+                    $pageURL = "";
+
+                    if($page_number>=2){
+                        echo "<a href='basis-pengetahuan.php?page=".($page_number-1)."'>  Prev </a>";
+                    }
+
+                    for($i=1; $i<=$total_pages; $i++){
+                        if ($i == $page_number) {   
+                            $pageURL .= "<a class = 'active' href='basis-pengetahuan.php?page=".$i."'>".$i." </a>";   
+                        }else{
+                            $pageURL .= "<a href='basis-pengetahuan.php?page=".$i."'>".$i." </a>";
+                        }   
+                    }
+
+                    echo $pageURL;    
+                    if($page_number<$total_pages){   
+                        echo "<a href='basis-pengetahuan.php?page=".($page_number+1)."'>  Next </a>";
+                    } 
+                ?>
+            </div>
         </div>
     </div>
 </body>

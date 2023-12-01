@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/style-admin-1.css">
     <title>Daftar Gejala</title>
 </head>
 <body>
     <?php
-        include "sidebar.php";
+        include "navbar.php";
         if(isset($_POST["edit"])) {
             $id = $_POST["id_gejala"];
             header("location: edit-gejala.php?id=".$id."");
@@ -30,8 +29,19 @@
                     <th>Action</th>
                 </tr>
                 <?php
-                    $query=mysqli_query($konek_db, "SELECT * FROM gejala WHERE 1");
-                    $id = 0;
+                    $limit = 15;
+
+                    if (isset($_GET["page"])) {    
+                        $page_number  = $_GET["page"];    
+                    }else{
+                        $page_number=1;
+                    }
+
+                    $initial_page = ($page_number-1) * $limit; 
+
+                    $query  = mysqli_query($konek_db, "SELECT * FROM gejala WHERE 1 LIMIT $initial_page, $limit");
+                    /*$query2 = mysqli_query($konek_db, "SELECT * FROM gejala LIMIT $initial_page, $limit");*/
+                    $id = $initial_page+0;
                     while ($data = mysqli_fetch_array($query)){
                 ?>
                 <form action="" method="POST">
@@ -57,6 +67,35 @@
                     }
                 ?>
             </table>
+            <div class="pagination">
+                <?php 
+                    $query2 = mysqli_query($konek_db, "SELECT COUNT(*) FROM gejala");
+                    $data2  = mysqli_fetch_row($query2);
+                    
+                    $total_rows = $data2[0];              
+                    echo "</br>";            
+                    // get the required number of pages
+                    $total_pages = ceil($total_rows / $limit);     
+                    $pageURL = "";
+
+                    if($page_number>=2){
+                        echo "<a href='gejala.php?page=".($page_number-1)."'>  Prev </a>";
+                    }
+
+                    for($i=1; $i<=$total_pages; $i++){
+                        if ($i == $page_number) {   
+                            $pageURL .= "<a class = 'active' href='gejala.php?page=".$i."'>".$i." </a>";   
+                        }else{
+                            $pageURL .= "<a href='gejala.php?page=".$i."'>".$i." </a>";
+                        }   
+                    }
+
+                    echo $pageURL;    
+                    if($page_number<$total_pages){   
+                        echo "<a href='gejala.php?page=".($page_number+1)."'>  Next </a>";
+                    } 
+                ?>
+            </div>
         </div>
     </div>
 </body>

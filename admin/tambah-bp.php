@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/style-admin-1.css">
     <title>Tambah Basis Pengetahuan</title>
 </head>
 <body>
     <?php
-        include "sidebar.php"
+        include "navbar.php"
     ?>
     <div class="container">
         <p class="judul">TAMBAH BASIS PENGETAHUAN</p>
         <form action="" method="POST">
-            <div class="cek">
+            <li class="list-form">
                 <label id="label-gejala">Pilih Diagnosa :</label>
                 <select name="diagnosa" id="">
                     <option value="">---PILIH---</option>
@@ -25,8 +24,8 @@
                         }
                     ?>
                 </select>
-            </div>
-            <div class="cek">
+            </li>
+            <li class="list-form">
                 <label id="label-gejala">Pilih Gejala :</label>
                 <div class="cx">
                     <?php
@@ -37,8 +36,9 @@
                         }
                     ?>
                 </div>
-            </div>
+            </li>
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
+            
             <?php
                 if(isset($_POST['simpan'])){
                     $diagnosa           = $_POST['diagnosa'];

@@ -46,6 +46,7 @@
                 <label id="label-gejala">Alamat :</label>
                 <textarea type='text' name='alamat' id='input-gejala' value="<?php echo $data['alamat'] ?>"required><?php echo $data['alamat'] ?></textarea>
             </div>
+            
             <div class="btn">
                 <a href="profile.php"><button type="submit" name="simpan" id="btn-mulai">SIMPAN</button></a>
             </div>

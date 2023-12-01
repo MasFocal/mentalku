@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Nov 2023 pada 03.25
+-- Waktu pembuatan: 01 Des 2023 pada 13.18
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -242,7 +242,6 @@ CREATE TABLE `user` (
   `email` varchar(150) NOT NULL,
   `password` varchar(50) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `foto` text NOT NULL,
   `umur` int(2) NOT NULL,
   `jeniskelamin` varchar(9) NOT NULL,
   `alamat` text NOT NULL,
@@ -253,14 +252,14 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`iduser`, `email`, `password`, `nama`, `foto`, `umur`, `jeniskelamin`, `alamat`, `nohp`) VALUES
-(1, 'user@user.com', 'user', 'User', '', 21, 'perempuan', 'DxT', 123456789),
-(2, 'tes@email', '', 'tes', '', 0, '', '', 0),
-(3, 'agus@email', 'agus', 'agus ccc', '', 19, 'Laki Laki', 'Jalan Belimbing No 12, Gilingan, Banjarsari, Surakarta', 863520462),
-(4, 'dandan@user.com', 'dan12', 'dan', '', 0, '', '', 0),
-(5, 'dandan@email', 'dandan', 'Daniel', '', 0, '', '', 0),
-(6, 'danieldaniel@email', '12121212', 'daniel12', '', 0, '', '', 0),
-(9, 'daniel12@email', '12121212', 'Daniel Putra', '', 0, '', '', 0);
+INSERT INTO `user` (`iduser`, `email`, `password`, `nama`, `umur`, `jeniskelamin`, `alamat`, `nohp`) VALUES
+(1, 'user@user.com', 'user', 'User', 21, 'perempuan', 'DxT', 123456789),
+(2, 'tes@email', '', 'tes', 0, '', '', 0),
+(3, 'agus@email', 'agus', 'Agus Supriyatno Pramojo', 19, 'Laki Laki', 'Jalan Belimbing No 12, Gilingan, Banjarsari, Surakarta', 863520462),
+(4, 'dandan@user.com', 'dan12', 'dan', 0, '', '', 0),
+(5, 'dandan@email', 'dandan', 'Daniel', 0, '', '', 0),
+(6, 'danieldaniel@email', '12121212', 'daniel12', 0, '', '', 0),
+(9, 'daniel12@email', '12121212', 'Daniel Putra', 0, '', '', 0);
 
 --
 -- Indexes for dumped tables

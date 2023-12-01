@@ -16,30 +16,30 @@
     <div class="container">
         <p class="judul">PROFILE</p>
         <form action="" method="POST">
-            <div class="cek">
+            <li class="cek">
                 <label id="label-gejala">Nama :</label>
-                <label id='input-gejala-1'><?php echo $data['nama'] ?></label>
-            </div>
-            <div class="cek">
+                <p id='input-gejala-1'><?php echo $data['nama'] ?></p>
+            </li>
+            <li class="cek">
                 <label id="label-gejala">Email :</label>
-                <label id='input-gejala-1'><?php echo $data['email'] ?></label>
-            </div>
-            <div class="cek">
+                <p id='input-gejala-1'><?php echo $data['email'] ?></p>
+            </li>
+            <li class="cek">
                 <label id="label-gejala">Usia :</label>
-                <label id='input-gejala-1'><?php echo $data['umur'] ?></label>
-            </div>
-            <div class="cek">
+                <p id='input-gejala-1'><?php echo $data['umur'] ?></p>
+            </li>
+            <li class="cek">
                 <label id="label-gejala">Jenis Kelamin :</label>
-                <label id='input-gejala-1'><?php echo $data['jeniskelamin'] ?></label>
-            </div>
-            <div class="cek">
+                <p id='input-gejala-1'><?php echo $data['jeniskelamin'] ?></p>
+            </li>
+            <li class="cek">
                 <label id="label-gejala">No HP :</label>
-                <label id='input-gejala-1'><?php echo $data['nohp'] ?></label>
-            </div>
-            <div class="cek">
+                <p id='input-gejala-1'><?php echo $data['nohp'] ?></p>
+            </li>
+            <li class="cek">
                 <label id="label-gejala">Alamat :</label>
-                <label id='input-gejala-1'><?php echo $data['alamat'] ?></label>
-            </div>
+                <p id='input-gejala-1'><?php echo $data['alamat'] ?></p>
+            </li>
         </form>
         <div class="btn">
             <a href="edit-profile.php"><button name="simpan" id="btn-mulai">EDIT</button></a>

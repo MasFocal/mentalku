@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/style-admin-1.css">
     <title>Daftar Admin</title>
 </head>
 <body>
     <?php
-        include "sidebar.php";
+        include "navbar.php";
         if(isset($_POST["hapus"])) {
             $id = $_POST["id_admin"];
             mysqli_query($konek_db, "DELETE FROM `admin` WHERE `idadmin`='$id'");

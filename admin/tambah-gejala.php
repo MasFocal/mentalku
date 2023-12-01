@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/css/style-admin-1.css">
     <title>Tambah Gejala</title>
 </head>
 <body>
     <?php
-        include "sidebar.php"
+        include "navbar.php"
     ?>
     <div class="container">
         <p class="judul">TAMBAH GEJALA</p>
         <form action="" method="POST">
-            <div class="cek">
-                <label id="label-gejala">ID Gejala :</label>
-                <input type="text" name="idgejala" id="input-gejala" required>
-            </div>
-            <div class="cek">
-                <label id="label-gejala">Gejala :</label>
-                <input type="text" name="gejala" id="input-gejala" required>
-            </div>
+            <li class="list-form">
+                <label id="label">ID Gejala :</label>
+                <input type="text" name="idgejala" id="input-teks" required>
+            </li>
+            <li class="list-form">
+                <label id="label">Gejala :</label>
+                <input type="text" name="gejala" id="input-teks" required>
+            </li>
             <button type="submit" name="simpan" id="btn-simpan">SIMPAN</button>
 
             <?php
