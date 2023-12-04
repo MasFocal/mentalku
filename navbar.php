@@ -2,6 +2,7 @@
     include "koneksi.php";
 ?>
 <div class="header">
+    <link rel="stylesheet" href="asset/css/style-user.css">
     <a href="index.php">
         <img src="asset/img/logo.png" id="logo">
     </a>
