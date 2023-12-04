@@ -43,7 +43,7 @@
                 $result = mysqli_query($konek_db, $query);
                     
                 if ($result) {
-                    header('location:user/profile.php');
+                    header('location:user/edit-profile.php');
                     exit();
                 } else {
                     $notif = "Data Gagal Disimpan";

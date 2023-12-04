@@ -333,3 +333,30 @@ input {
     font-size: 20px;
     align-items: top;
 }
+
+.list-psikolog {
+    text-align: center;
+    margin: 0 150px;
+}
+
+.label-psikolog {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+
+.label-isi {
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.cek-2 {
+    border-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    background-color: #f7f7f7;;
+}

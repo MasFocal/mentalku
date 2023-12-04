@@ -34,6 +34,24 @@
                 </div>
             </div>
         </form>
+        <p class="judul">INFORMASI PSIKOLOG</p>
+        <?php
+            $query2         = mysqli_query($konek_db, "SELECT * FROM psikolog WHERE 1");
+            $id = 0;
+            while ($data2   = mysqli_fetch_array($query2)){
+        ?>
+        <form class="list-psikolog">
+            <div class="cek-2">
+                <p class="label-psikolog">Nama Psikolog :</p>
+                <p class="label-isi"><?php echo $data2['nama'] ?></p>
+                <p class="label-psikolog">Alamat Psikolog :</p>
+                <p class="label-isi"><?php echo $data2['alamat'] ?></p>
+            </div>
+        </form>
+        <?php
+            }
+        ?>
+    </div>
     </div>
 </body>
 </html>

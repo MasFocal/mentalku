@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Des 2023 pada 13.18
+-- Waktu pembuatan: 04 Des 2023 pada 04.17
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.1.17
 
@@ -234,6 +234,27 @@ INSERT INTO `gejala` (`idgejala`, `gejala`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `psikolog`
+--
+
+CREATE TABLE `psikolog` (
+  `idpsikolog` char(3) NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `alamat` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `psikolog`
+--
+
+INSERT INTO `psikolog` (`idpsikolog`, `nama`, `alamat`) VALUES
+('P01', 'Christina Irnawati S.Psi., M.Psi.,Psikolog.,CH.,CT', 'Jl. Kapten Dr. Prakosa Bayan Krajan No.RT12/20, Kadipiro, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57136'),
+('P02', 'Tan Laurencia Yosita, S.Psi., M.Psi., Psikolog', 'Jl. Kh Ahmad Dahlan, Karangkidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50134'),
+('P03', 'Nadia Merlin S.Psi, M.Sc', 'Jl. Ternate No.14C, RT.1/RW.6, Cideng, Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10150');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -282,6 +303,12 @@ ALTER TABLE `diagnosa`
 --
 ALTER TABLE `gejala`
   ADD PRIMARY KEY (`idgejala`);
+
+--
+-- Indeks untuk tabel `psikolog`
+--
+ALTER TABLE `psikolog`
+  ADD PRIMARY KEY (`idpsikolog`);
 
 --
 -- Indeks untuk tabel `user`
