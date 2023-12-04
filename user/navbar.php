@@ -5,6 +5,7 @@
     if(isset($_SESSION['email']) && isset($_SESSION['password']) && isset($_SESSION['id'])){
 ?>
 <div class="header">
+    <link rel="stylesheet" href="../asset/css/style-user.css">
     <a href="index.php">
         <img src="../asset/img/logo.png" id="logo">
     </a>
