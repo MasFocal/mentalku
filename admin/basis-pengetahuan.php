@@ -10,7 +10,7 @@
         include "navbar.php";
         if(isset($_POST["hapus"])) {
             $id = $_POST["id_pd"];
-            mysqli_query($konek_db, "DELETE FROM `basispengetahuan` WHERE `diagnosa`='$id'");
+            mysqli_query($konek_db, "DELETE FROM `basispengetahuan` WHERE `idbasispengetahuan`='$id'");
         }
     ?>
     <div class="container">
@@ -35,7 +35,7 @@
 
                     $initial_page = ($page_number-1) * $limit; 
 
-                    $query = mysqli_query($konek_db, "SELECT * FROM `basispengetahuan` WHERE 1 LIMIT $initial_page, $limit");
+                    $query = mysqli_query($konek_db, "SELECT * FROM `basispengetahuan` ORDER BY `diagnosa` LIMIT $initial_page, $limit");
                     $id = $initial_page+0;
                     while ($data = mysqli_fetch_array($query)){
                 ?>
@@ -46,8 +46,8 @@
                             $id++;
                             echo "
                                 <td>".$id."</td>
-                                <td>".$data['0']."</td>
                                 <td>".$data['1']."</td>
+                                <td>".$data['2']."</td>
                                 <td>
                                     <div class='action'>
                                         <a href=\"?hapus&diagnosa=".$data[0]."\"><button name='hapus'>Hapus</button></a>

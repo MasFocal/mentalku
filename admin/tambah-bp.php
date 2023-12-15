@@ -41,12 +41,13 @@
             
             <?php
                 if(isset($_POST['simpan'])){
+                    $idbasispengetahuan = $_POST['idbasispengetahuan'];
                     $diagnosa           = $_POST['diagnosa'];
                     $gejala             = $_POST['gejala'];
                     $jumlah_dipilih     = count($gejala);
 
                     for($x=0;$x<$jumlah_dipilih;$x++){
-                        $query="INSERT INTO `basispengetahuan`(`diagnosa`, `gejala`) VALUES ('$diagnosa','$gejala[$x]')";
+                        $query="INSERT INTO `basispengetahuan`(`diagnosa`, `gejala`, `idbasispengetahuan`) VALUES ('$diagnosa','$gejala[$x]', '$idbasispengetahuan')";
                         $result=mysqli_query($konek_db, $query);
         
                         if($result) echo '<META HTTP-EQUIV="Refresh" CONTENT="0; URL=basis-pengetahuan.php">'; 

@@ -54,9 +54,9 @@
         <form class="list-psikolog">
             <div class="cek-2">
                 <p class="label-psikolog">Nama Psikolog :</p>
-                <p class="label-isi"><?php echo $data2['namapsikolog'] ?></p>
+                <p class="label-isi"><?php echo $data2['nama'] ?></p>
                 <p class="label-psikolog">Alamat Psikolog :</p>
-                <p class="label-isi"><?php echo $data2['alamatpsikolog'] ?></p>
+                <p class="label-isi"><?php echo $data2['alamat'] ?></p>
             </div>
         </form>
         <?php

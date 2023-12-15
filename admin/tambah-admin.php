@@ -32,12 +32,27 @@
                 $username     = $_POST['username'];
                 $password       = $_POST['password'];
 
-                $query="INSERT INTO `admin`(`nama`, `username`, `password`) VALUES ('$nama', '$username', '$password')";
-                $result=mysqli_query($konek_db, $query);
+                $cekEmail = mysqli_query($konek_db, "SELECT * FROM `admin` WHERE `username` = '$username'");
 
-                if($result) header ('location:admin.php');
-                else echo "Data Gagal Disimpan";
-
+                if (mysqli_num_rows($cekEmail) > 0) {
+                    echo ("
+                        <script LANGUAGE='JavaScript'>
+                        window.alert('Username Sudah Terdaftar');
+                        window.location.href='tambah-admin.php';
+                        </script>
+                        ");
+                    exit();
+                } else {
+                    $query="INSERT INTO `admin`(`nama`, `username`, `password`) VALUES ('$nama', '$username', '$password')";
+                    $result=mysqli_query($konek_db, $query);
+                        
+                    if ($result) {
+                        header('location:user/admin.php');
+                        exit();
+                    } else {
+                        $notif = "Data Gagal Disimpan";
+                    }
+                }
                 }
             ?>
         </form>
